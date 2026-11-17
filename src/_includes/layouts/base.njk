@@ -108,6 +108,6 @@
 <nav class="switcher" aria-label="Compare styles"><span>Style</span><a href="/" class="on">A</a><a href="/preview/b/">B</a><a href="/preview/c/">C</a><a href="/preview/d/">D</a><a href="/choose/">All 4</a></nav>
 {% endif %}
 <script src="/js/site.js"></script>
-{% if site.falling_eggs %}<script src="/js/eggs.js" defer></script>{% endif %}
+{% if site.falling_eggs %}<script src="/js/eggs.js?v={{ '' | buildDate }}-2" defer></script>{% endif %}
 </body>
 </html>

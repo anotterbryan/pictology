@@ -41,11 +41,10 @@
 
   var css = document.createElement("style");
   css.textContent =
-    ".egg-snow{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}" +
-    ".egg-snow img{position:absolute;top:-60px;will-change:transform;filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}" +
-    "@keyframes egg-fall{to{transform:translate3d(var(--drift),calc(100vh + 120px),0) rotate(var(--spin))}}" +
-    "@keyframes egg-sway{0%,100%{margin-left:-14px}50%{margin-left:14px}}" +
-    ".egg-toggle{position:fixed;right:14px;bottom:76px;z-index:98;border:0;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(0,0,0,.15);font:600 12px/1 system-ui,sans-serif;padding:9px 12px;cursor:pointer;color:#2b2622}";
+    ".egg-snow{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:40;overflow:hidden}" +
+    ".egg-snow .egg{position:absolute;top:-70px;will-change:transform}" +
+    ".egg-snow img{display:block;width:100%;height:auto;filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}" +
+    ".egg-toggle{position:fixed;right:14px;bottom:76px;z-index:98;border:0;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(0,0,0,.15);font:600 12px/1 -apple-system,system-ui,sans-serif;padding:9px 12px;cursor:pointer;color:#2b2622;-webkit-appearance:none}";
   document.head.appendChild(css);
 
   var MAX = window.innerWidth < 700 ? 9 : 16;
@@ -53,19 +52,37 @@
 
   function spawn() {
     if (document.hidden || layer.childElementCount >= MAX) return;
+    var wrap = document.createElement("div");
+    wrap.className = "egg";
     var img = document.createElement("img");
     img.src = designs[Math.floor(Math.random() * designs.length)];
     img.alt = "";
-    var size = 18 + Math.random() * 16;              // 18–34px
-    var dur = 9 + Math.random() * 9;                 // 9–18s to fall
-    img.style.width = size + "px";
-    img.style.left = Math.random() * 100 + "vw";
-    img.style.opacity = (0.75 + Math.random() * 0.25).toFixed(2);
-    img.style.setProperty("--drift", (Math.random() * 120 - 60).toFixed(0) + "px");
-    img.style.setProperty("--spin", (Math.random() * 70 - 35).toFixed(0) + "deg");
-    img.style.animation = "egg-fall " + dur + "s linear forwards, egg-sway " + (2.5 + Math.random() * 2.5) + "s ease-in-out infinite";
-    img.addEventListener("animationend", function (e) { if (e.animationName === "egg-fall") img.remove(); });
-    layer.appendChild(img);
+    var size = 18 + Math.random() * 16;                       // 18–34px
+    var dur = (9 + Math.random() * 9) * 1000;                 // 9–18s to fall
+    var drift = Math.random() * 120 - 60;
+    var tilt0 = Math.random() * 30 - 15, tilt1 = tilt0 + (Math.random() * 40 - 20);
+    var fall = (window.innerHeight || document.documentElement.clientHeight) + 140;
+    wrap.style.width = size + "px";
+    wrap.style.left = (Math.random() * 100).toFixed(1) + "%";
+    wrap.style.opacity = (0.8 + Math.random() * 0.2).toFixed(2);
+    wrap.appendChild(img);
+    layer.appendChild(wrap);
+    var done = function () { if (wrap.parentNode) wrap.parentNode.removeChild(wrap); };
+    if (wrap.animate) {
+      var a = wrap.animate([
+        { transform: "translate(0px,0px) rotate(" + tilt0 + "deg)" },
+        { transform: "translate(" + drift + "px," + fall + "px) rotate(" + tilt1 + "deg)" }
+      ], { duration: dur, easing: "linear", fill: "forwards" });
+      a.onfinish = done;
+      img.animate([{ transform: "translateX(-14px)" }, { transform: "translateX(14px)" }],
+        { duration: 2500 + Math.random() * 2500, direction: "alternate", iterations: Infinity, easing: "ease-in-out" });
+    } else {
+      wrap.style.transition = "transform " + dur + "ms linear";
+      requestAnimationFrame(function () { requestAnimationFrame(function () {
+        wrap.style.transform = "translate(" + drift + "px," + fall + "px) rotate(" + tilt1 + "deg)";
+      }); });
+      setTimeout(done, dur + 100);
+    }
   }
 
   function start() {
