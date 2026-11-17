@@ -24,6 +24,18 @@ layout: layouts/base.njk
 </section>
 <div class="band" aria-hidden="true"></div>
 
+<section id="meet" class="meet">
+  <div class="wrap">
+    {% if site.portrait %}<img class="meet-photo" src="{{ site.portrait }}" alt="{{ site.artist }}">{% endif %}
+    <div>
+      <div class="eyebrow">Meet {{ site.artist }}</div>
+      <h2>{{ site.about_title }}</h2>
+      <p>{{ site.about_teaser }}</p>
+      <a class="more" href="/about/">Read her story →</a>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
     <div class="head">
@@ -58,24 +70,7 @@ layout: layouts/base.njk
   </div>
 </section>
 
-<section id="about" class="about">
-  <div class="wrap">
-    <div class="about-img">
-      <img src="{{ site.about_image }}" alt="Pieces by {{ site.artist }}">
-      {% if site.portrait %}<img class="portrait" src="{{ site.portrait }}" alt="{{ site.artist }}">{% endif %}
-    </div>
-    <div>
-      <div class="eyebrow" style="color:var(--red)">About the artist</div>
-      <h2>{{ site.about_title }}</h2>
-      {{ site.about_body | paras | safe }}
-      <div class="facts">
-        <div><b>Pysanky</b>wax-resist eggs</div>
-        <div><b>Folklore</b>Marlboro College</div>
-        <div><b>Brattleboro</b>Vermont</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="process">
   <div class="wrap">

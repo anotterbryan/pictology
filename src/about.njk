@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: About Carole
+summary: Meet Carole, the folk artist behind Pictology in Brattleboro, Vermont.
+---
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-img">
+      <img src="{{ site.about_image }}" alt="Pieces by {{ site.artist }}">
+      {% if site.portrait %}<img class="portrait" src="{{ site.portrait }}" alt="{{ site.artist }}">{% endif %}
+    </div>
+    <div>
+      <div class="eyebrow">About the artist</div>
+      <h1 class="about-h">{{ site.about_title }}</h1>
+      {{ site.about_body | paras | safe }}
+      <div class="facts">
+        <div><b>Pysanky</b>wax-resist eggs</div>
+        <div><b>Folklore</b>Marlboro College</div>
+        <div><b>Brattleboro</b>Vermont</div>
+      </div>
+      <div class="btns">
+        <a class="btn fill" href="/#gallery">See her work</a>
+        <a class="btn ghost" href="/#contact">Say hello</a>
+      </div>
+    </div>
+  </div>
+</section>

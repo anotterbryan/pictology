@@ -142,8 +142,11 @@ content:
   - name: about_title
     label: About — heading
     type: string
+  - name: about_teaser
+    label: Meet Carole — short intro on the home page (2–3 sentences)
+    type: text
   - name: about_body
-    label: About — your story
+    label: About page — your full story
     type: text
     description: Leave a blank line between paragraphs.
   - name: about_image
