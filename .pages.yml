@@ -65,6 +65,10 @@ content:
   - name: hero_text
     label: Top banner — intro text
     type: text
+  - name: falling_eggs
+    label: Falling eggs (little eggs drift down the screen like snowflakes)
+    type: boolean
+    default: true
   - name: promo_eyebrow
     label: Special callout — small line (e.g. "New this season")
     type: string
