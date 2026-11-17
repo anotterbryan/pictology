@@ -91,7 +91,7 @@
 <body>
 <div class="band" aria-hidden="true"></div>
 <header><div class="wrap"><nav>
-  <a class="logo" href="/">Picto<span>logy</span></a>
+  <a class="logo" href="/"><img class="logo-mark" src="/images/logos/egg-E2.svg" alt="" width="30" height="42"><span class="wm">Picto<span>logy</span></span></a>
   <ul class="links">
     <li><a href="/#gallery">Work</a></li>
         <li><a href="/about/">About</a></li>
@@ -102,12 +102,12 @@
 {{ content | safe }}
 </main>
 <div class="band" aria-hidden="true"></div>
-<footer><b>{{ site.name }}</b> · Folk art by {{ site.artist }} · {{ site.location }}<br>All artwork © {{ "" | year }} {{ site.artist }}. Please don’t reproduce without permission.</footer>
+<footer><img class="foot-logo" src="/images/logos/egg-E2.svg" alt="Pictology signature egg logo" width="72" height="100"><b>{{ site.name }}</b> · Folk art by {{ site.artist }} · {{ site.location }}<br>All artwork © {{ "" | year }} {{ site.artist }}. Please don’t reproduce without permission.</footer>
 {% if page.url == "/" %}
 <style>.switcher{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99;background:#111;color:#fff;border-radius:999px;padding:8px 10px;display:flex;gap:6px;align-items:center;font:600 13px/1 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.3)}.switcher span{padding:0 6px;opacity:.7}.switcher a{text-decoration:none;padding:8px 12px;border-radius:999px;background:#2a2a2a;color:#fff}.switcher a.on{background:#fff;color:#111}</style>
 <nav class="switcher" aria-label="Compare styles"><span>Style</span><a href="/" class="on">A</a><a href="/preview/b/">B</a><a href="/preview/c/">C</a><a href="/preview/d/">D</a><a href="/choose/">All 4</a></nav>
 {% endif %}
 <script src="/js/site.js"></script>
-{% if site.falling_eggs %}<script src="/js/eggs.js?v={{ '' | buildDate }}-2" defer></script>{% endif %}
+{% if site.falling_eggs %}<script src="/js/eggs.js?v={{ '' | buildDate }}-3" defer></script>{% endif %}
 </body>
 </html>

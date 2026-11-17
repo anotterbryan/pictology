@@ -29,6 +29,11 @@
     svg('<rect width="64" height="64" fill="#1d5c4a"/><path d="M0 34 Q8 26 16 34 T32 34 T48 34 T64 34 V44 Q56 36 48 44 T32 44 T16 44 T0 44Z" fill="#fff6e0"/><circle cx="32" cy="16" r="5" fill="#f2b630"/><circle cx="32" cy="54" r="3" fill="#c0392b"/>')
   ];
 
+  // Carole's logo eggs fall too (mixed in with the patterned ones)
+  var base = "";
+  try { base = (document.currentScript && document.currentScript.src || "").replace(/js\/eggs\.js.*$/, ""); } catch (e) {}
+  var logoEggs = ["E2", "E2", "E1", "E3", "A", "B", "C", "D"].map(function (k) { return base + "images/logos/fall-" + k + ".png"; });
+
   var layer = document.createElement("div");
   layer.className = "egg-snow";
   layer.setAttribute("aria-hidden", "true");
@@ -55,9 +60,10 @@
     var wrap = document.createElement("div");
     wrap.className = "egg";
     var img = document.createElement("img");
-    img.src = designs[Math.floor(Math.random() * designs.length)];
+    var isLogo = base && Math.random() < 0.45;
+    img.src = isLogo ? logoEggs[Math.floor(Math.random() * logoEggs.length)] : designs[Math.floor(Math.random() * designs.length)];
     img.alt = "";
-    var size = 18 + Math.random() * 16;                       // 18–34px
+    var size = isLogo ? 26 + Math.random() * 16 : 18 + Math.random() * 16;   // logo eggs a bit bigger so the name shows
     var dur = (9 + Math.random() * 9) * 1000;                 // 9–18s to fall
     var drift = Math.random() * 120 - 60;
     var tilt0 = Math.random() * 30 - 15, tilt1 = tilt0 + (Math.random() * 40 - 20);
