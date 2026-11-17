@@ -11,6 +11,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/icons": "icons" });
 
   // Rewrites /images/... etc. so the site works at anotterbryan.github.io/pictology/
   eleventyConfig.addPlugin(HtmlBasePlugin);
