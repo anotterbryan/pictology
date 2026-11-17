@@ -21,7 +21,7 @@ h1{font-family:Lora,serif;font-size:clamp(2.2rem,5vw,3.4rem);text-align:center;m
 .opt p{color:#6b625a;flex:1}
 .opt ul{margin:12px 0 18px 20px;color:#4b443d;font-size:.95rem}
 .opt a.go{align-self:flex-start;background:#c0392b;color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px}
-.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}@media(max-width:800px){.logos{grid-template-columns:repeat(2,1fr)}}.lg{background:#fff;border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.08)}.lg img{width:70%;margin:0 auto 12px}.lg h2{font-family:Lora,serif;font-size:1.25rem;margin:6px 0 4px}.lg p{font-size:.92rem;color:#6b625a}.vote{margin:50px auto 0;max-width:720px;background:#fff8e6;border:2px solid #f6dc95;border-radius:22px;padding:30px;text-align:center}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}@media(max-width:1000px){.logos{grid-template-columns:repeat(3,1fr)}}@media(max-width:640px){.logos{grid-template-columns:repeat(2,1fr)}}.lg{background:#fff;border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.08)}.lg img{width:70%;margin:0 auto 12px}.lg h2{font-family:Lora,serif;font-size:1.25rem;margin:6px 0 4px}.lg p{font-size:.92rem;color:#6b625a}.vote{margin:50px auto 0;max-width:720px;background:#fff8e6;border:2px solid #f6dc95;border-radius:22px;padding:30px;text-align:center}
 .vote h2{font-family:Lora,serif;font-size:1.7rem;margin-bottom:8px}
 .vote .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
 .vote a{background:#2b2622;color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px}
@@ -50,7 +50,7 @@ h1{font-family:Lora,serif;font-size:clamp(2.2rem,5vw,3.4rem);text-align:center;m
   <h1 style="margin-top:70px">And which logo?</h1>
   <p class="lead">Your name, written into a pysanka. These can go on your website, table sign, business cards and gift tags.</p>
   <div class="logos">
-    {% for l in [["A","Signature Band","Flowing script on a cranberry belt, gold star on black."],["B","Wax-Line Belt","Your name follows the curve of the egg, like it was written in wax."],["C","Bold & Modern","Big italic “Carole” with “Pictology,” saffron and cobalt."],["D","Monogram “C”","Just your initial, made for tiny spots like the browser tab."]] %}
+    {% for l in [["A","Signature Band","Flowing script on a cranberry belt, gold star on black."],["B","Wax-Line Belt","Your name follows the curve of the egg, like it was written in wax."],["C","Bold & Modern","Big italic “Carole” with “Pictology,” saffron and cobalt."],["D","Monogram “C”","Just your initial, made for tiny spots like the browser tab."],["E","Signature Egg","A big script C shapes the egg, and your name flourishes around to finish it."]] %}
     <div class="lg"><img src="/images/choose/logo-{{ l[0] }}.png" alt="Logo option {{ l[0] }}"><span class="letter">{{ l[0] }}</span><h2>{{ l[1] }}</h2><p>{{ l[2] }}</p></div>
     {% endfor %}
   </div>
