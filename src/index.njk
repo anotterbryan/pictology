@@ -36,16 +36,32 @@ layout: layouts/base.njk
   </div>
 </section>
 
+{% if site.promo_title %}
+<section class="promo">
+  <div class="wrap">
+    <div class="promo-card">
+      {% if site.promo_image %}<img src="{{ site.promo_image }}" alt="{{ site.promo_title }}">{% endif %}
+      <div>
+        <div class="eyebrow">{{ site.promo_eyebrow }}</div>
+        <h2>{{ site.promo_title }}</h2>
+        <p>{{ site.promo_text }}</p>
+        <a class="btn fill" href="#gallery" data-go="wax">See the wax ornaments</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section id="work">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">What {{ site.artist }} makes</div>
       <h2>Made by hand, made to keep</h2>
-      <p>Four kinds of work, all in the same folk spirit: bright color, old symbols and a lot of patience.</p>
+      <p>Four kinds of handmade work, all bright, cheerful and one of a kind.</p>
     </div>
     <div class="cats">
       {% for c in categories %}
-      <a class="cat" data-go="{{ c.key }}"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><p>{{ c.blurb }}</p></div></a>
+      <a class="cat" data-go="{{ c.key }}"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><span class="price">{{ c.price }}</span><p>{{ c.blurb }}</p></div></a>
       {% endfor %}
     </div>
   </div>
@@ -77,13 +93,18 @@ layout: layouts/base.njk
     <div class="head">
       <div class="eyebrow">The process</div>
       <h2>How a pysanka is made</h2>
-      <p>One egg can take many hours. Here’s the short version.</p>
+      <p>Each egg can take more than 90 minutes to finish. Here’s the short version.</p>
     </div>
     <div class="steps">
       <div class="step"><h3>Write</h3><p>Lines are drawn in melted beeswax with a kistka, a tiny funnel stylus. Anything under wax stays white.</p></div>
       <div class="step"><h3>Dye</h3><p>The egg goes into its first color, usually yellow, then gets more wax to protect that color.</p></div>
       <div class="step"><h3>Repeat</h3><p>Lightest to darkest: orange, red, blue, black. Each layer of wax keeps a color in place.</p></div>
       <div class="step"><h3>Reveal</h3><p>The wax is melted away by candle flame, then the egg is varnished, emptied and capped as an ornament.</p></div>
+    </div>
+    <div class="symbols">
+      <h3>What the symbols mean</h3>
+      <ul>{% for s in symbols %}<li><b>{{ s[0] }}</b> {{ s[1] }}</li>{% endfor %}</ul>
+      <p class="small">Every egg comes in a plexiglass box with an explanatory sheet.</p>
     </div>
   </div>
 </section>

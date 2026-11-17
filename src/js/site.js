@@ -6,7 +6,7 @@ function filter(f){
   figs.forEach(x=>x.classList.toggle('hide',f!=='all'&&!x.dataset.c.split(' ').includes(f)));
 }
 btns.forEach(b=>b.onclick=()=>filter(b.dataset.f));
-document.querySelectorAll('.cat').forEach(c=>c.onclick=()=>{filter(c.dataset.go);document.getElementById('gallery').scrollIntoView({behavior:'smooth'});});
+document.querySelectorAll('.cat,[data-go]').forEach(c=>c.onclick=()=>{filter(c.dataset.go);document.getElementById('gallery').scrollIntoView({behavior:'smooth'});});
 const lb=document.getElementById('lb');
 figs.forEach(f=>f.onclick=()=>{
   document.getElementById('lbimg').src=f.querySelector('img').src;

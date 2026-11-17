@@ -7,6 +7,6 @@ categories:
 caption: "Fifteen eggs: eight-point stars, ocean waves, beetles, firebirds and a kite flier."
 availability: ""
 featured: false
-order: 4
+order: 8
 published: true
 ---

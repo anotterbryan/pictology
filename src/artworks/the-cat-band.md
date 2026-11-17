@@ -3,10 +3,10 @@ title: "The Cat Band"
 image: /images/art/cats-card.jpg
 image_alt: "The Cat Band: A collage scene of a guitar-playing cat and dancing friends, the spirit of her cards."
 categories:
-  - fiber
+  - cards
 caption: "A collage scene of a guitar-playing cat and dancing friends, the spirit of her cards."
 availability: ""
 featured: false
-order: 10
+order: 14
 published: true
 ---

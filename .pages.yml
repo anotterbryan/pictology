@@ -37,81 +37,7 @@ content:
     label: Photo description (for screen readers)
     type: string
     description: e.g. "Red pysanka ornament with white spirals"
-  - name: categories
-    label: Where it shows in the gallery
-    type: select
-    description: Pick one or more.
-    options:
-      multiple: true
-      values:
-      - name: pysanky
-        label: Pysanky
-      - name: ornaments
-        label: Ornaments
-      - name: verse
-        label: Story & verse eggs
-      - name: fiber
-        label: Fiber art & cards
-  - name: caption
-    label: Caption (1–2 lines)
-    type: text
-  - name: availability
-    label: Availability or price (optional)
-    type: string
-    description: e.g. "Available · $45" or "Sold". Leave blank to show nothing.
-  - name: featured
-    label: Feature at the top of the home page
-    type: boolean
-    default: false
-  - name: order
-    label: Display order (1 shows first)
-    type: number
-  - name: published
-    label: Published (turn off to hide without deleting)
-    type: boolean
-    default: true
-- name: notes
-  label: Studio notes (blog)
-  type: collection
-  path: src/notes
-  filename: '{year}-{month}-{day}-{primary}.md'
-  format: yaml-frontmatter
-  view:
-    primary: title
-    fields:
-    - title
-    - date
-    - published
-    sort: date
-    order: desc
-  fields:
-  - name: title
-    label: Title
-    type: string
-    required: true
-  - name: date
-    label: Date
-    type: date
-    required: true
-  - name: summary
-    label: One-line summary
-    type: text
-  - name: image
-    label: Photo (optional)
-    type: image
-    options:
-      path: src/images/notes
-  - name: image_alt
-    label: Photo description
-    type: string
-  - name: body
-    label: Post
-    type: rich-text
-  - name: published
-    label: Published (turn off to keep as a draft)
-    type: boolean
-    default: true
-- name: site
+  - name: site
   label: Site settings
   type: file
   path: src/_data/site.json
@@ -139,6 +65,20 @@ content:
   - name: hero_text
     label: Top banner — intro text
     type: text
+  - name: promo_eyebrow
+    label: Special callout — small line (e.g. "New this season")
+    type: string
+  - name: promo_title
+    label: Special callout — headline (leave blank to hide the callout)
+    type: string
+  - name: promo_text
+    label: Special callout — text
+    type: text
+  - name: promo_image
+    label: Special callout — photo
+    type: image
+    options:
+      path: src/images/art
   - name: about_title
     label: About — heading
     type: string

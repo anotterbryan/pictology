@@ -7,6 +7,6 @@ categories:
 caption: "Geometric eggs in cobalt, teal and green."
 availability: ""
 featured: false
-order: 7
+order: 11
 published: true
 ---

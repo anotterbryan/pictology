@@ -5,10 +5,10 @@
   "location": "Brattleboro, Vermont",
   "hero_eyebrow": "Folk art from Brattleboro, Vermont",
   "hero_title": "Every egg tells a *story*.",
-  "hero_text": "Hand-written pysanky, heirloom ornaments, felt and fiber pieces, and one-of-a-kind cards, made by Carole using the old wax-and-dye method, one line at a time.",
+  "hero_text": "Hand-written pysanky eggs, one-of-a-kind collaged cards, stitched felt ornaments and new wax ornaments, all made by Carole in Brattleboro, Vermont.",
   "about_title": "Hi, I'm Carole.",
   "about_teaser": "I'm a folk artist in Brattleboro, Vermont, and a grandma who never quite stopped playing with color. Mostly I write pysanky (Ukrainian wax-and-dye eggs), but you'll also find ornaments, felt flowers and handmade cards coming off my kitchen table.",
-  "about_body": "I make art under the name <b>Pictology</b> from my home in Brattleboro, Vermont. My first love is pysanky, the Ukrainian tradition of writing on eggs with beeswax and dye. No paint: each line is drawn in hot wax, the egg goes into a dye bath, and the design builds up color by color until the wax is melted away to reveal it.\n\nI studied American Studies and Folklore at Marlboro College, and those old symbols still fascinate me: suns for life, deer for prosperity, waves for good fortune, roosters for a new day. Lately I also letter little verses and landscapes onto my eggs, stitch felt flowers, and make cards just for fun.\n\nEvery piece is one of a kind.",
+  "about_body": "I make art under the name <b>Pictology</b> from my home in Brattleboro, Vermont. My first love is pysanky, the Ukrainian tradition of writing on eggs with beeswax and dye. No paint: each line is drawn in hot wax, the egg goes into a dye bath, and the design builds up color by color until the wax is melted away to reveal it.\n\nI studied American Studies and Folklore at Marlboro College, and those old symbols still fascinate me: suns for life and growth, horses for prosperity, sheep for strength, flowers for happiness. Lately I also letter little verses and landscapes onto my eggs, stitch felt flowers, and make cards just for fun.\n\nEvery piece is one of a kind.",
   "about_image": "/images/art/tissue-trio.jpg",
   "portrait": "/images/site/carole.jpg",
   "contact_title": "Interested in a piece?",
@@ -17,5 +17,9 @@
   "facebook": "https://www.facebook.com/carole.crompton",
   "instagram": "",
   "etsy": "",
-  "meta_description": "Pictology: hand-dyed pysanky eggs, ornaments, fiber art and handmade cards by Carole, Brattleboro, Vermont."
+  "meta_description": "Pictology: pysanky eggs, collaged cards, felt ornaments and wax ornaments handmade by Carole Crompton in Brattleboro, Vermont.",
+  "promo_eyebrow": "New this season",
+  "promo_title": "Wax ornaments, just $2 each",
+  "promo_text": "Six-point stars and little houses in every color. An easy addition to your order and a great stocking stuffer.",
+  "promo_image": "/images/art/wax-stars.jpg"
 }

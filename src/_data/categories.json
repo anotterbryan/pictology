@@ -1,6 +1,30 @@
 [
-  { "key": "pysanky", "label": "Pysanky", "blurb": "Real eggshells, written in beeswax and dyed layer by layer: stars, waves, beetles, roosters.", "image": "/images/art/egg-board.jpg" },
-  { "key": "ornaments", "label": "Ornaments", "blurb": "Finished with gold caps and hangers, ready for the tree or a window.", "image": "/images/art/animal-ornaments.jpg" },
-  { "key": "verse", "label": "Story & verse eggs", "blurb": "Painted landscapes wrapped in hand-lettered words, like little scrolls.", "image": "/images/art/verse-eggs.jpg" },
-  { "key": "fiber", "label": "Fiber art & cards", "blurb": "Felt flowers and stars, stitched pieces and playful collage cards.", "image": "/images/art/cats-card.jpg" }
+  {
+    "key": "pysanky",
+    "label": "Pysanky eggs",
+    "price": "Boxed, with a symbol guide",
+    "blurb": "Real eggshells written in beeswax and dyed color by color. Each comes in a clear gift box.",
+    "image": "/images/art/hero-eggs.jpg"
+  },
+  {
+    "key": "cards",
+    "label": "Collaged cards",
+    "price": "$7 each · 4 for $25",
+    "blurb": "One-of-a-kind cut-paper and painted cards: snowy hills, sheep, cats, Santas and mandalas.",
+    "image": "/images/art/card-sheep-night.jpg"
+  },
+  {
+    "key": "felt",
+    "label": "Felt ornaments & pins",
+    "price": "$5 each",
+    "blurb": "Hand-stitched cardinals, poinsettias, sunflowers, hearts and beaded trees.",
+    "image": "/images/art/felt-cardinals.jpg"
+  },
+  {
+    "key": "wax",
+    "label": "Wax ornaments",
+    "price": "$2 each · New!",
+    "blurb": "Six-point stars and little houses in candy colors. The perfect stocking stuffer.",
+    "image": "/images/art/wax-stars.jpg"
+  }
 ]
