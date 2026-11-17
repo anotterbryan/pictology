@@ -1,0 +1,109 @@
+---
+layout: layouts/bare.njk
+title: "Style D: The Color Story"
+variant: d
+permalink: /preview/d/
+eleventyExcludeFromCollections: true
+fonts: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap"
+---
+<style>
+:root{--saffron:#f2b42c;--cran:#c4362f;--cobalt:#24479a;--spruce:#1d5c4a;--ink:#141210;--paper:#fffdf8}
+body{background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:18px;line-height:1.6}
+.big{font-family:Fraunces,serif;font-weight:900;line-height:.9;letter-spacing:-.02em}
+.d-top{display:flex;justify-content:space-between;align-items:center;padding:20px 5vw}
+.d-top .mark{font-family:Fraunces,serif;font-weight:900;font-size:1.5rem;text-decoration:none}
+.d-top .mark span{color:var(--cran)}
+.d-top nav{display:flex;gap:10px;flex-wrap:wrap}
+.d-top nav a{text-decoration:none;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:999px;color:#fff}
+@media(max-width:700px){.d-top nav{display:none}}
+.d-hero{padding:4vw 5vw 6vw;display:grid;grid-template-columns:1.2fr 1fr;gap:4vw;align-items:end}
+.d-hero h1{font-size:clamp(3.6rem,10vw,9rem)}
+.d-hero h1 .c1{color:var(--cran)}.d-hero h1 .c2{color:var(--cobalt)}.d-hero h1 .c3{color:var(--saffron)}
+.d-hero p{font-size:1.15rem;max-width:28em;margin-top:24px}
+.d-hero .stack{position:relative;height:100%;min-height:420px}
+.d-hero .stack img{position:absolute;border-radius:24px;object-fit:cover;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.d-hero .stack img:nth-child(1){width:70%;height:75%;right:0;top:0}
+.d-hero .stack img:nth-child(2){width:48%;height:48%;left:0;bottom:0;border:8px solid var(--paper)}
+@media(max-width:850px){.d-hero{grid-template-columns:1fr}.d-hero .stack{min-height:340px}}
+.ticker{background:var(--ink);color:var(--saffron);overflow:hidden;white-space:nowrap;padding:14px 0;font-family:Fraunces,serif;font-weight:900;font-size:1.4rem}
+.ticker div{display:inline-block;animation:t 30s linear infinite}
+@keyframes t{to{transform:translateX(-50%)}}
+.band{padding:80px 0 70px;color:#fff}
+.band .head{padding:0 5vw;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.band h2{font-size:clamp(3rem,8vw,6.5rem)}
+.band .meta{max-width:26em}
+.band .price{display:inline-block;background:#fff;color:var(--ink);font-weight:700;padding:8px 16px;border-radius:999px;margin-bottom:12px}
+.rail{display:flex;gap:20px;overflow-x:auto;padding:0 5vw 16px;scroll-snap-type:x mandatory}
+.rail::-webkit-scrollbar{height:8px}.rail::-webkit-scrollbar-thumb{background:#ffffff66;border-radius:8px}
+.tile{flex:0 0 280px;scroll-snap-align:start;background:#ffffff14;border-radius:22px;padding:12px}
+.tile img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.tile h3{font-family:Fraunces,serif;font-size:1.25rem;margin:12px 4px 2px}
+.tile p{font-size:.85rem;opacity:.85;margin:0 4px}
+.b-pysanky{background:var(--cran)}.b-cards{background:var(--cobalt)}.b-felt{background:var(--spruce)}.b-wax{background:var(--saffron);color:var(--ink)}
+.b-wax .tile{background:#00000010}.b-wax .price{background:var(--ink);color:var(--saffron)}
+.d-meet{display:grid;grid-template-columns:auto 1fr;gap:5vw;align-items:center;padding:100px 5vw}
+.d-meet img{width:260px;height:260px;border-radius:50%;object-fit:cover;outline:10px solid var(--saffron);outline-offset:-2px}
+.d-meet h2{font-size:clamp(2.6rem,6vw,5rem);margin-bottom:16px}
+.d-meet a{font-weight:700;color:var(--cran)}
+@media(max-width:800px){.d-meet{grid-template-columns:1fr}.d-meet img{width:200px;height:200px}}
+.d-sym{padding:20px 5vw 100px}
+.d-sym h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:2px solid var(--ink);border-radius:999px;padding:8px 16px;font-size:.92rem}
+.chips span:nth-child(4n+1){background:#fdecc0}.chips span:nth-child(4n+2){background:#f8d6d3}.chips span:nth-child(4n+3){background:#d7e0f5}.chips span:nth-child(4n){background:#d3e8e0}
+.d-contact{background:var(--ink);color:#fff;padding:110px 5vw 130px;text-align:center}
+.d-contact h2{font-size:clamp(3rem,9vw,7rem);color:var(--saffron)}
+.d-contact p{max-width:34em;margin:20px auto 34px;color:#ddd}
+.d-btn{display:inline-block;background:var(--cran);color:#fff;text-decoration:none;font-weight:700;padding:16px 30px;border-radius:999px;margin:6px;font-size:1.05rem}
+.d-btn.alt{background:transparent;border:2px solid #fff}
+</style>
+
+<header class="d-top">
+  <a class="mark" href="#">Picto<span>logy</span></a>
+  <nav>{% set cols = {pysanky:'#c4362f', cards:'#24479a', felt:'#1d5c4a', wax:'#c99212'} %}
+  {% for c in categories %}<a href="#{{ c.key }}" style="background:{{ cols[c.key] }}">{{ c.label }}</a>{% endfor %}</nav>
+</header>
+
+<section class="d-hero">
+  <div>
+    <h1 class="big"><span class="c1">Color,</span><br><span class="c2">wax</span> &amp;<br><span class="c3">joy.</span></h1>
+    <p>{{ site.hero_text }}</p>
+  </div>
+  <div class="stack">
+    <img src="/images/art/hero-eggs.jpg" alt="Pysanky eggs">
+    <img src="/images/art/wax-stars.jpg" alt="Wax ornaments">
+  </div>
+</section>
+
+<div class="ticker"><div>{% for i in range(0,2) %}✦ Hand painted &amp; handmade ✦ Pysanky eggs ✦ Collaged cards 4 for $25 ✦ Felt ornaments $5 ✦ NEW: Wax ornaments $2 ✦ Brattleboro, Vermont &nbsp;{% endfor %}</div></div>
+
+{% for c in categories %}
+<section class="band b-{{ c.key }}" id="{{ c.key }}">
+  <div class="head">
+    <h2 class="big">{{ c.label }}</h2>
+    <div class="meta"><span class="price">{{ c.price }}</span><p>{{ c.blurb }}</p></div>
+  </div>
+  <div class="rail">
+    {% for a in collections.artworks %}{% if c.key in a.data.categories %}
+    <div class="tile"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy"><h3>{{ a.data.title }}</h3><p>{{ a.data.caption }}</p></div>
+    {% endif %}{% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<section class="d-meet">
+  <img src="{{ site.portrait }}" alt="{{ site.artist }}">
+  <div><h2 class="big">Hi, I’m<br>Carole.</h2><p>{{ site.about_teaser }}</p><p style="margin-top:14px"><a href="/about/">Read my story →</a></p></div>
+</section>
+
+<section class="d-sym">
+  <h2 class="big">What the symbols mean</h2>
+  <div class="chips">{% for s in symbols %}<span><b>{{ s[0] }}</b> · {{ s[1] }}</span>{% endfor %}</div>
+</section>
+
+<section class="d-contact">
+  <h2 class="big">Let’s make something.</h2>
+  <p>{{ site.contact_blurb }}</p>
+  {% if site.email %}<a class="d-btn" href="mailto:{{ site.email }}">Email Carole</a>{% endif %}
+  <a class="d-btn alt" href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>
+</section>

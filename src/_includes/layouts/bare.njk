@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{{ title }} | Pictology</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{ fonts }}" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}img{display:block;max-width:100%}a{color:inherit}
+.switcher{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99;background:#111;color:#fff;border-radius:999px;padding:8px 10px;display:flex;gap:6px;align-items:center;font:600 13px/1 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.switcher span{padding:0 6px;opacity:.7}
+.switcher a{text-decoration:none;padding:8px 12px;border-radius:999px;background:#2a2a2a}
+.switcher a.on{background:#fff;color:#111}
+</style>
+</head>
+<body class="{{ bodyClass }}">
+{{ content | safe }}
+{% if variant != "all" %}<nav class="switcher" aria-label="Compare styles"><span>Style</span>
+  <a href="/" {% if variant == 'a' %}class="on"{% endif %}>A</a>
+  <a href="/preview/b/" {% if variant == 'b' %}class="on"{% endif %}>B</a>
+  <a href="/preview/c/" {% if variant == 'c' %}class="on"{% endif %}>C</a>
+  <a href="/preview/d/" {% if variant == 'd' %}class="on"{% endif %}>D</a>
+  <a href="/choose/">All 4</a>
+</nav>{% endif %}
+</body>
+</html>

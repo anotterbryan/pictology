@@ -1,0 +1,57 @@
+---
+layout: layouts/bare.njk
+title: "Pick your favorite style"
+variant: all
+permalink: /choose/
+eleventyExcludeFromCollections: true
+fonts: "https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap"
+---
+<style>
+body{background:#f7f4ee;color:#2b2622;font-family:"Nunito Sans",sans-serif;font-size:18px;line-height:1.6;padding:56px 24px 110px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font-family:Lora,serif;font-size:clamp(2.2rem,5vw,3.4rem);text-align:center;margin-bottom:10px}
+.lead{text-align:center;max-width:36em;margin:0 auto 46px;color:#6b625a}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+@media(max-width:800px){.opts{grid-template-columns:1fr}}
+.opt{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08);display:flex;flex-direction:column}
+.opt img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid #eee}
+.opt .b{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
+.letter{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#2b2622;color:#fff;font-weight:800;font-size:1.2rem;margin-bottom:10px}
+.opt h2{font-family:Lora,serif;font-size:1.6rem;margin-bottom:6px}
+.opt p{color:#6b625a;flex:1}
+.opt ul{margin:12px 0 18px 20px;color:#4b443d;font-size:.95rem}
+.opt a.go{align-self:flex-start;background:#c0392b;color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px}
+.vote{margin:50px auto 0;max-width:720px;background:#fff8e6;border:2px solid #f6dc95;border-radius:22px;padding:30px;text-align:center}
+.vote h2{font-family:Lora,serif;font-size:1.7rem;margin-bottom:8px}
+.vote .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.vote a{background:#2b2622;color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px}
+</style>
+<div class="wrap">
+  <h1>Which one feels like you, Carole?</h1>
+  <p class="lead">Here are four completely different looks for your website. Everything inside is the same (your pieces, prices and story); only the style changes. Tap each one to look around, then tell us your favorite. You can also mix and match: “B’s colors with C’s shop,” for example.</p>
+  <div class="opts">
+    <div class="opt"><img src="/images/choose/a.jpg" alt="Style A preview"><div class="b"><span class="letter">A</span><h2>Clean &amp; Bright</h2>
+      <p>Light, airy and friendly. Lots of white space with cranberry, sunflower and sage accents.</p>
+      <ul><li>Your photo and hello near the top</li><li>Gallery you can sort by type</li><li>Separate About page</li></ul>
+      <a class="go" href="/">See Style A</a></div></div>
+    <div class="opt"><img src="/images/choose/b.jpg" alt="Style B preview"><div class="b"><span class="letter">B</span><h2>The Gallery</h2>
+      <p>Dark and dramatic, like a museum. Your eggs glow on black, with elegant serif type and gold details.</p>
+      <ul><li>Full-screen photo when you arrive</li><li>Each kind of work in its own “room”</li><li>Feels like fine art</li></ul>
+      <a class="go" href="/preview/b/">See Style B</a></div></div>
+    <div class="opt"><img src="/images/choose/c.jpg" alt="Style C preview"><div class="b"><span class="letter">C</span><h2>The Holiday Shop</h2>
+      <p>A warm little online shop in evergreen and gold. Prices front and center, perfect for gift season.</p>
+      <ul><li>“New! Wax ornaments” banner at the very top</li><li>Every piece has an “Ask about this” button that starts an email to you</li><li>Simple “How to order” steps</li></ul>
+      <a class="go" href="/preview/c/">See Style C</a></div></div>
+    <div class="opt"><img src="/images/choose/d.jpg" alt="Style D preview"><div class="b"><span class="letter">D</span><h2>The Color Story</h2>
+      <p>Bold and joyful, like a modern magazine. Big type, and each kind of work gets its own bright color band.</p>
+      <ul><li>Saffron, cranberry, cobalt and spruce, like your eggs</li><li>Swipe sideways through each collection</li><li>Fun scrolling banner with your prices</li></ul>
+      <a class="go" href="/preview/d/">See Style D</a></div></div>
+  </div>
+  <div class="vote">
+    <h2>Tell Bryan your pick!</h2>
+    <p>Tap a letter to send a quick email, or just call or text him.</p>
+    <div class="btns">
+      {% for l in ['A','B','C','D'] %}<a href="mailto:?subject={{ ('My Pictology pick: Style ' + l) | urlencode }}&body={{ ('I like Style ' + l + ' best because...') | urlencode }}">I pick {{ l }}</a>{% endfor %}
+    </div>
+  </div>
+</div>
