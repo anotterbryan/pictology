@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <div class="eyebrow" style="color:var(--red)">Studio notes · <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></div>
+  <h1>{{ title }}</h1>
+  {% if image %}<img src="{{ image }}" alt="{{ image_alt }}">{% endif %}
+  <div class="body">{{ content | safe }}</div>
+  <a class="back" href="/#notes">← Back to Pictology</a>
+</article>

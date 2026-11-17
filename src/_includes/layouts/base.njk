@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- set pageTitle = (title + " | " + site.name) if title else (site.name + " | Folk Art by " + site.artist) -%}
+{%- set pageDesc = summary or site.meta_description -%}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}/images/art/hero-eggs.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="band"></div>
+<header><div class="wrap"><nav>
+  <a class="logo" href="/">Picto<span>logy</span></a>
+  <ul class="links">
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#gallery">Gallery</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav></div></header>
+<main id="top">
+{{ content | safe }}
+</main>
+<div class="band"></div>
+<footer><b>{{ site.name }}</b> · Folk art by {{ site.artist }} · {{ site.location }}<br>All artwork © {{ "" | year }} {{ site.artist }}. Please don’t reproduce without permission.</footer>
+<script src="/js/site.js"></script>
+</body>
+</html>

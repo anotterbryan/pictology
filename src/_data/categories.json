@@ -1,0 +1,6 @@
+[
+  { "key": "pysanky", "label": "Pysanky", "blurb": "Real eggshells, written in beeswax and dyed layer by layer: stars, waves, beetles, roosters.", "image": "/images/art/egg-board.jpg" },
+  { "key": "ornaments", "label": "Ornaments", "blurb": "Finished with gold caps and hangers, ready for the tree or a window.", "image": "/images/art/animal-ornaments.jpg" },
+  { "key": "verse", "label": "Story & verse eggs", "blurb": "Painted landscapes wrapped in hand-lettered words, like little scrolls.", "image": "/images/art/verse-eggs.jpg" },
+  { "key": "fiber", "label": "Fiber art & cards", "blurb": "Felt flowers and stars, stitched pieces and playful collage cards.", "image": "/images/art/cats-card.jpg" }
+]

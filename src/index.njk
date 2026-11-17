@@ -1,0 +1,132 @@
+---
+layout: layouts/base.njk
+---
+{%- set hero = collections.featured[0] -%}
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">{{ site.hero_eyebrow }}</div>
+      <h1>{{ site.hero_title | replace("*", "<em>", 1) | replace("*", "</em>", 1) | safe }}</h1>
+      <p>{{ site.hero_text }}</p>
+      <div class="btns">
+        <a class="btn fill" href="#gallery">See the gallery</a>
+        <a class="btn ghost" href="#contact">Ask about a piece</a>
+      </div>
+    </div>
+    {% if hero %}
+    <div class="hero-img">
+      <img src="{{ hero.data.image }}" alt="{{ hero.data.image_alt }}">
+      <div class="tag">✦ Newest: {{ hero.data.title }}</div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+<div class="band"></div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">What {{ site.artist }} makes</div>
+      <h2>Made by hand, made to keep</h2>
+      <p>Four kinds of work, all in the same folk spirit: bright color, old symbols and a lot of patience.</p>
+    </div>
+    <div class="cats">
+      {% for c in categories %}
+      <a class="cat" data-go="{{ c.key }}"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><p>{{ c.blurb }}</p></div></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Gallery</div>
+      <h2>From the studio</h2>
+      <p>Tap any piece to see it larger.</p>
+    </div>
+    <div class="filters">
+      <button class="on" data-f="all">All</button>
+      {% for c in categories %}<button data-f="{{ c.key }}">{{ c.label }}</button>{% endfor %}
+    </div>
+    <div class="grid" id="grid">
+      {% for a in collections.artworks %}
+      <figure data-c="{{ a.data.categories | join(' ') }}"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy"><figcaption><b>{{ a.data.title }}</b>{{ a.data.caption }}{% if a.data.availability %}<span class="avail">{{ a.data.availability }}</span>{% endif %}</figcaption></figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-img">
+      <img src="{{ site.about_image }}" alt="Pieces by {{ site.artist }}">
+      {% if site.portrait %}<img class="portrait" src="{{ site.portrait }}" alt="{{ site.artist }}">{% endif %}
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--red)">About the artist</div>
+      <h2>{{ site.about_title }}</h2>
+      {{ site.about_body | paras | safe }}
+      <div class="facts">
+        <div><b>Pysanky</b>wax-resist eggs</div>
+        <div><b>Folklore</b>Marlboro College</div>
+        <div><b>Brattleboro</b>Vermont</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">The process</div>
+      <h2>How a pysanka is made</h2>
+      <p>One egg can take many hours. Here’s the short version.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Write</h3><p>Lines are drawn in melted beeswax with a kistka, a tiny funnel stylus. Anything under wax stays white.</p></div>
+      <div class="step"><h3>Dye</h3><p>The egg goes into its first color, usually yellow, then gets more wax to protect that color.</p></div>
+      <div class="step"><h3>Repeat</h3><p>Lightest to darkest: orange, red, blue, black. Each layer of wax keeps a color in place.</p></div>
+      <div class="step"><h3>Reveal</h3><p>The wax is melted away by candle flame, then the egg is varnished, emptied and capped as an ornament.</p></div>
+    </div>
+  </div>
+</section>
+
+{% if collections.notes.length %}
+<section id="notes">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Studio notes</div>
+      <h2>News from the studio</h2>
+    </div>
+    <div class="notes">
+      {% for n in collections.notes %}{% if loop.index <= 6 %}
+      <a class="note" href="{{ n.url }}"><time datetime="{{ n.date | isoDate }}">{{ n.date | readableDate }}</time><h3>{{ n.data.title }}</h3><p>{{ n.data.summary }}</p></a>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow" style="color:var(--red)">Say hello</div>
+      <h2>{{ site.contact_title }}</h2>
+      <p>{{ site.contact_blurb }}</p>
+      <div class="btns">
+        {% if site.email %}<a class="btn fill" href="mailto:{{ site.email }}">Email {{ site.artist }}</a>{% endif %}
+        {% if site.facebook %}<a class="btn {{ 'ghost' if site.email else 'fill' }}" href="{{ site.facebook }}" target="_blank" rel="noopener">Message on Facebook</a>{% endif %}
+        {% if site.instagram %}<a class="btn ghost" href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        {% if site.etsy %}<a class="btn ghost" href="{{ site.etsy }}" target="_blank" rel="noopener">Shop on Etsy</a>{% endif %}
+      </div>
+      <p class="small">{% if site.email %}{{ site.email }} · {% endif %}Find her on Facebook as <b>Pictology</b> · {{ site.location }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button aria-label="Close" id="lbx">×</button>
+  <img id="lbimg" alt="">
+  <p id="lbcap"></p>
+</div>

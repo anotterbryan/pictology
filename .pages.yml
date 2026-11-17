@@ -1,0 +1,179 @@
+# Pages CMS configuration: the editor Carole uses to add artwork, write studio notes and update her info.
+# Sign in at https://app.pagescms.org with GitHub and pick this repo.
+# Docs: https://pagescms.org/docs/configuration/
+
+media:
+  input: src/images
+  output: /images
+  categories:
+  - image
+content:
+- name: artworks
+  label: Artwork (gallery)
+  type: collection
+  path: src/artworks
+  filename: '{primary}.md'
+  format: yaml-frontmatter
+  view:
+    primary: title
+    fields:
+    - title
+    - featured
+    - published
+    sort: order
+    order: asc
+  fields:
+  - name: title
+    label: Title
+    type: string
+    required: true
+  - name: image
+    label: Photo
+    type: image
+    required: true
+    options:
+      path: src/images/art
+  - name: image_alt
+    label: Photo description (for screen readers)
+    type: string
+    description: e.g. "Red pysanka ornament with white spirals"
+  - name: categories
+    label: Where it shows in the gallery
+    type: select
+    description: Pick one or more.
+    options:
+      multiple: true
+      values:
+      - name: pysanky
+        label: Pysanky
+      - name: ornaments
+        label: Ornaments
+      - name: verse
+        label: Story & verse eggs
+      - name: fiber
+        label: Fiber art & cards
+  - name: caption
+    label: Caption (1–2 lines)
+    type: text
+  - name: availability
+    label: Availability or price (optional)
+    type: string
+    description: e.g. "Available · $45" or "Sold". Leave blank to show nothing.
+  - name: featured
+    label: Feature at the top of the home page
+    type: boolean
+    default: false
+  - name: order
+    label: Display order (1 shows first)
+    type: number
+  - name: published
+    label: Published (turn off to hide without deleting)
+    type: boolean
+    default: true
+- name: notes
+  label: Studio notes (blog)
+  type: collection
+  path: src/notes
+  filename: '{year}-{month}-{day}-{primary}.md'
+  format: yaml-frontmatter
+  view:
+    primary: title
+    fields:
+    - title
+    - date
+    - published
+    sort: date
+    order: desc
+  fields:
+  - name: title
+    label: Title
+    type: string
+    required: true
+  - name: date
+    label: Date
+    type: date
+    required: true
+  - name: summary
+    label: One-line summary
+    type: text
+  - name: image
+    label: Photo (optional)
+    type: image
+    options:
+      path: src/images/notes
+  - name: image_alt
+    label: Photo description
+    type: string
+  - name: body
+    label: Post
+    type: rich-text
+  - name: published
+    label: Published (turn off to keep as a draft)
+    type: boolean
+    default: true
+- name: site
+  label: Site settings
+  type: file
+  path: src/_data/site.json
+  format: json
+  fields:
+  - name: name
+    label: Site name
+    type: string
+  - name: artist
+    label: Artist name
+    type: string
+  - name: url
+    label: Web address
+    type: string
+  - name: location
+    label: Location
+    type: string
+  - name: hero_eyebrow
+    label: Top banner — small line above the headline
+    type: string
+  - name: hero_title
+    label: Top banner — headline
+    type: string
+    description: Put *asterisks* around one word to make it gold italic.
+  - name: hero_text
+    label: Top banner — intro text
+    type: text
+  - name: about_title
+    label: About — heading
+    type: string
+  - name: about_body
+    label: About — your story
+    type: text
+    description: Leave a blank line between paragraphs.
+  - name: about_image
+    label: About — main photo
+    type: image
+    options:
+      path: src/images/site
+  - name: portrait
+    label: About — portrait (small round photo)
+    type: image
+    options:
+      path: src/images/site
+  - name: contact_title
+    label: Contact — heading
+    type: string
+  - name: contact_blurb
+    label: Contact — text
+    type: text
+  - name: email
+    label: Email (optional)
+    type: string
+  - name: facebook
+    label: Facebook link
+    type: string
+  - name: instagram
+    label: Instagram link (optional)
+    type: string
+  - name: etsy
+    label: Etsy or shop link (optional)
+    type: string
+  - name: meta_description
+    label: Google description (1–2 sentences)
+    type: text
