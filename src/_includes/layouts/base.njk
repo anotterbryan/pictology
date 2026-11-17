@@ -3,15 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{%- set pageTitle = (title + " | " + site.name) if title else (site.name + " | Folk Art by " + site.artist) -%}
-{%- set pageDesc = summary or site.meta_description -%}
+{%- set isHome = page.url == "/" -%}
+{%- set pageTitle = site.seo_title if isHome else ((title + " | " + site.name + " · Folk Art in " + site.location) if title else site.seo_title) -%}
+{%- set pageDesc = (summary if not isHome else "") or site.meta_description -%}
+{%- set shareImg = site.url + (image or site.share_image) -%}
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
+<meta name="author" content="{{ site.full_name }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta name="geo.region" content="US-{{ site.region }}">
+<meta name="geo.placename" content="{{ site.location }}">
+{% if site.google_verification %}<meta name="google-site-verification" content="{{ site.google_verification }}">{% endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDesc }}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="{{ site.url }}/images/art/hero-eggs.jpg">
+<meta property="og:type" content="{{ 'article' if layout == 'layouts/post.njk' else 'website' }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ shareImg }}">
+<meta property="og:image:alt" content="Hand-painted pysanky eggs by {{ site.full_name }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDesc }}">
+<meta name="twitter:image" content="{{ shareImg }}">
+{%- set sameAs = [] -%}
+{%- for k in ['facebook','instagram','etsy'] %}{% if site[k] and 'search' not in site[k] %}{% set sameAs = (sameAs.push(site[k]), sameAs) %}{% endif %}{% endfor %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite", "@id": "{{ site.url }}/#website", "url": "{{ site.url }}/", "name": "{{ site.name }}",
+      "description": {{ site.meta_description | json | safe }}, "inLanguage": "en-US",
+      "publisher": { "@id": "{{ site.url }}/#business" }
+    },
+    {
+      "@type": ["Organization", "Store"], "@id": "{{ site.url }}/#business", "name": "{{ site.name }}",
+      "url": "{{ site.url }}/", "logo": "{{ site.url }}/icons/icon-512.png", "image": "{{ site.url }}{{ site.share_image }}",
+      "description": {{ site.meta_description | json | safe }},
+      {% if site.email %}"email": "{{ site.email }}",{% endif %}
+      "address": { "@type": "PostalAddress", "addressLocality": "Brattleboro", "addressRegion": "{{ site.region }}", "addressCountry": "US" },
+      "areaServed": "US",
+      "founder": { "@id": "{{ site.url }}/#carole" },
+      "knowsAbout": ["Pysanky", "Ukrainian Easter eggs", "Wax-resist egg decorating", "Collage greeting cards", "Felt ornaments", "Beeswax ornaments", "Folk art"],
+      "sameAs": {{ sameAs | json | safe }}
+    },
+    {
+      "@type": "Person", "@id": "{{ site.url }}/#carole", "name": "{{ site.full_name }}", "jobTitle": "Folk artist",
+      "url": "{{ site.url }}/about/", "image": "{{ site.url }}{{ site.portrait }}",
+      "homeLocation": { "@type": "Place", "name": "{{ site.location }}" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Marlboro College" },
+      "sameAs": {{ sameAs | json | safe }}
+    }{% if isHome %},
+    {
+      "@type": "ItemList", "name": "Pictology handmade folk art", "itemListElement": [
+      {%- for a in collections.artworks %}
+        { "@type": "ListItem", "position": {{ loop.index }}, "item": {
+          "@type": "Product", "name": {{ a.data.title | json | safe }}, "image": "{{ site.url }}{{ a.data.image }}",
+          "description": {{ a.data.caption | json | safe }}, "category": {{ (a.data.categories | first) | json | safe }},
+          "brand": { "@type": "Brand", "name": "{{ site.name }}" }{% set pr = a.data.availability | priceNum %}{% if pr %},
+          "offers": { "@type": "Offer", "price": "{{ pr }}", "priceCurrency": "USD", "availability": "https://schema.org/{{ 'SoldOut' if 'Sold' in a.data.availability else 'InStock' }}", "seller": { "@id": "{{ site.url }}/#business" } }{% endif %}
+        } }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+      ]
+    }{% endif %}{% if layout == 'layouts/post.njk' %},
+    {
+      "@type": "BlogPosting", "headline": {{ title | json | safe }}, "datePublished": "{{ page.date | isoDate }}",
+      "author": { "@id": "{{ site.url }}/#carole" }, "publisher": { "@id": "{{ site.url }}/#business" },
+      "image": "{{ shareImg }}", "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+    }{% endif %}{% if page.url == "/about/" %},
+    { "@type": "AboutPage", "url": "{{ site.url }}/about/", "name": "About {{ site.full_name }}", "mainEntity": { "@id": "{{ site.url }}/#carole" } }{% endif %}
+  ]
+}
+</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">

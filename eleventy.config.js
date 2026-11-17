@@ -31,6 +31,10 @@ export default function (eleventyConfig) {
     new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
   );
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  eleventyConfig.addFilter("priceNum", (s = "") => { const m = String(s).match(/\$\s*(\d+(?:\.\d+)?)/); return m ? m[1] : ""; });
+  eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
+  eleventyConfig.addFilter("stripTags", (s = "") => String(s).replace(/<[^>]+>/g, ""));
+  eleventyConfig.addFilter("buildDate", () => new Date().toISOString().slice(0, 10));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
   eleventyConfig.addFilter("paras", (s = "") =>
     String(s).split(/\n\s*\n/).filter(Boolean).map((p) => `<p>${p.trim()}</p>`).join("")

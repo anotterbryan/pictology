@@ -15,7 +15,7 @@ layout: layouts/base.njk
     </div>
     {% if hero %}
     <div class="hero-img">
-      <img src="{{ hero.data.image }}" alt="{{ hero.data.image_alt }}">
+      <img src="{{ hero.data.image }}" alt="{{ hero.data.image_alt }}" fetchpriority="high">
       <div class="tape" aria-hidden="true"></div>
       <div class="tag">Newest: <b>{{ hero.data.title }}</b></div>
     </div>

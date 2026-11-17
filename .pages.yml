@@ -117,6 +117,21 @@ content:
   - name: etsy
     label: Etsy or shop link (optional)
     type: string
+  - name: seo_title
+    label: Google — page title for the home page
+    type: string
+    description: Shown as the blue headline in Google results. Keep it under about 65 characters.
   - name: meta_description
-    label: Google description (1–2 sentences)
+    label: Google — description (1–2 sentences)
     type: text
+  - name: full_name
+    label: Full name (for Google)
+    type: string
+  - name: share_image
+    label: Photo shown when the site is shared on Facebook or in a text
+    type: image
+    options:
+      path: src/images/art
+  - name: google_verification
+    label: Google Search Console verification code (Bryan sets this)
+    type: string

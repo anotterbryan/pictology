@@ -3,9 +3,13 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>{{ site.url }}/</loc></url>
-<url><loc>{{ site.url }}/about/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url><loc>{{ site.url }}/</loc><lastmod>{{ "" | buildDate }}</lastmod>
+{%- for a in collections.artworks %}
+  <image:image><image:loc>{{ site.url }}{{ a.data.image }}</image:loc></image:image>
+{%- endfor %}
+</url>
+<url><loc>{{ site.url }}/about/</loc><lastmod>{{ "" | buildDate }}</lastmod></url>
 {%- for n in collections.notes %}
 <url><loc>{{ site.url }}{{ n.url }}</loc><lastmod>{{ n.date | isoDate }}</lastmod></url>
 {%- endfor %}
