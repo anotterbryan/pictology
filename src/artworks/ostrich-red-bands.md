@@ -1,6 +1,6 @@
 ---
 title: "Ostrich Egg, Red Bands & Vine"
-image: /images/art/ostrich-red-studio.jpg
+image: /images/art/ostrich-red-studio-v2.jpg
 image_alt: "Ostrich egg with red, saffron and black bands and a green vine"
 categories:
   - ostrich
