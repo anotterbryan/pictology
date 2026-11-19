@@ -33,6 +33,11 @@ content:
     required: true
     options:
       path: src/images/art
+  - name: image2
+    label: Second photo (optional, e.g. the other side)
+    type: image
+    options:
+      path: src/images/art
   - name: image_alt
     label: Photo description (for screen readers)
     type: string

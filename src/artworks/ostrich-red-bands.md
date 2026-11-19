@@ -1,11 +1,12 @@
 ---
-title: "Ostrich Egg, Red Bands"
-image: /images/art/ostrich-red-stripes.jpg
-image_alt: "Ostrich Egg, Red Bands: Rows of tiny stars, crosses and diamonds in red, saffron and black, circling the whole egg."
+title: "Ostrich Egg, Red Bands & Vine"
+image: /images/art/ostrich-red-studio.jpg
+image_alt: "Ostrich egg with red, saffron and black bands and a green vine"
 categories:
   - ostrich
-caption: "Rows of tiny stars, crosses and diamonds in red, saffron and black, circling the whole egg."
+caption: "Bands of diamonds, stars and tiny crosses in red, saffron and black, with a leafy green vine circling the middle. Hover or tap to see the other side."
 availability: "Ask about this egg"
+image2: /images/art/ostrich-red-stripes.jpg
 featured: false
 order: 5
 published: true

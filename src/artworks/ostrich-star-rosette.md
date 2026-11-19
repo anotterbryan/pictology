@@ -8,5 +8,5 @@ caption: "A star rosette in turquoise, violet and mint, with tiny windows and la
 availability: "Ask about this egg"
 featured: false
 order: 2
-published: true
+published: false
 ---

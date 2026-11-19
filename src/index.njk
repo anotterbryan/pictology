@@ -80,7 +80,7 @@ layout: layouts/base.njk
     </div>
     <div class="grid" id="grid">
       {% for a in collections.artworks %}
-      <figure data-c="{{ a.data.categories | join(' ') }}"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy"><figcaption><b>{{ a.data.title }}</b>{{ a.data.caption }}{% if a.data.availability %}<span class="avail">{{ a.data.availability }}</span>{% endif %}</figcaption></figure>
+      <figure data-c="{{ a.data.categories | join(' ') }}"{% if a.data.image2 %} data-alt="{{ a.data.image2 }}" class="has-alt"{% endif %}><div class="ph"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy">{% if a.data.image2 %}<img class="alt" src="{{ a.data.image2 }}" alt="Another view of {{ a.data.title }}" loading="lazy"><span class="flip">↻ Other side</span>{% endif %}</div><figcaption><b>{{ a.data.title }}</b>{{ a.data.caption }}{% if a.data.availability %}<span class="avail">{{ a.data.availability }}</span>{% endif %}</figcaption></figure>
       {% endfor %}
     </div>
   </div>

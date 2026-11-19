@@ -8,5 +8,5 @@ caption: "Red, saffron and black diamonds with a green leafy vine circling the m
 availability: "Ask about this egg"
 featured: false
 order: 3
-published: true
+published: false
 ---
