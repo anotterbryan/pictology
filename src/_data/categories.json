@@ -2,29 +2,15 @@
   {
     "key": "pysanky",
     "label": "Pysanky eggs",
-    "price": "Boxed, with a symbol guide",
-    "blurb": "Real eggshells, hand painted with beeswax and dyed color by color. Each comes in a clear gift box.",
+    "price": "Gift-boxed, with a guide to the symbols",
+    "blurb": "Real eggshells, hand drawn in beeswax and dyed color by color. Every design is Carole’s own, and each egg comes in a clear box with her explanation of pysanky.",
     "image": "/images/art/hero-eggs.jpg"
   },
   {
     "key": "cards",
     "label": "Collaged cards",
     "price": "$7 each · 4 for $25",
-    "blurb": "One-of-a-kind cut-paper and painted cards: snowy hills, sheep, cats, Santas and mandalas.",
+    "blurb": "One-of-a-kind cut-paper and painted cards: snowy hills, sheep, cats, Santas and mandalas. No two alike.",
     "image": "/images/art/card-sheep-night.jpg"
-  },
-  {
-    "key": "felt",
-    "label": "Felt ornaments & pins",
-    "price": "$5 each",
-    "blurb": "Hand-stitched cardinals, poinsettias, sunflowers, hearts and beaded trees.",
-    "image": "/images/art/felt-cardinals.jpg"
-  },
-  {
-    "key": "wax",
-    "label": "Wax ornaments",
-    "price": "$2 each · New!",
-    "blurb": "Six-point stars and little houses in candy colors. The perfect stocking stuffer.",
-    "image": "/images/art/wax-stars.jpg"
   }
 ]

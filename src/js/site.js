@@ -13,6 +13,6 @@ figs.forEach(f=>f.onclick=()=>{
   document.getElementById('lbcap').innerHTML=f.querySelector('figcaption').innerHTML;
   lb.classList.add('open');
 });
-document.getElementById('lbx').onclick=()=>lb.classList.remove('open');
-lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
-document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+const lbx=document.getElementById('lbx'); if(lbx) lbx.onclick=()=>lb.classList.remove('open');
+if(lb) lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb)lb.classList.remove('open')});

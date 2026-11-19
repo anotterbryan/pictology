@@ -8,5 +8,5 @@ caption: "Tiny embossed houses in candy colors: an easy add-on and a perfect sto
 availability: "$2 each · New!"
 featured: false
 order: 3
-published: true
+published: false
 ---

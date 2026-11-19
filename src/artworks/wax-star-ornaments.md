@@ -8,5 +8,5 @@ caption: "Six-point stars in cream, sunflower, pink, cranberry, blue and violet,
 availability: "$2 each · New!"
 featured: false
 order: 2
-published: true
+published: false
 ---
