@@ -7,6 +7,6 @@ categories:
 caption: "Glittering sheep on a dark hillside under gold stars."
 availability: "$7 · 4 for $25"
 featured: false
-order: 23
+order: 123
 published: true
 ---

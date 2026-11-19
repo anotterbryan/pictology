@@ -7,6 +7,6 @@ categories:
 caption: "Tiny embossed houses in candy colors: an easy add-on and a perfect stocking stuffer."
 availability: "$2 each · New!"
 featured: false
-order: 3
+order: 103
 published: false
 ---

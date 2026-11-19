@@ -7,6 +7,6 @@ categories:
 caption: "Six-point stars in cream, sunflower, pink, cranberry, blue and violet, hung on ribbon. New this season!"
 availability: "$2 each · New!"
 featured: false
-order: 2
+order: 102
 published: false
 ---

@@ -7,6 +7,6 @@ categories:
 caption: "A classic red ornament with spirals and an orange star, hung on the tree."
 availability: ""
 featured: false
-order: 9
+order: 109
 published: true
 ---

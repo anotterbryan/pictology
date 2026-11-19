@@ -39,7 +39,7 @@ body{background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;f
 .tile img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
 .tile h3{font-family:Fraunces,serif;font-size:1.25rem;margin:12px 4px 2px}
 .tile p{font-size:.85rem;opacity:.85;margin:0 4px}
-.b-pysanky{background:var(--cran)}.b-cards{background:var(--cobalt)}.b-felt{background:var(--spruce)}.b-wax{background:var(--saffron);color:var(--ink)}
+.b-pysanky{background:var(--cran)}.b-cards{background:var(--cobalt)}.b-felt{background:var(--spruce)}.b-ostrich{background:var(--spruce)}.b-wax{background:var(--saffron);color:var(--ink)}
 .b-wax .tile{background:#00000010}.b-wax .price{background:var(--ink);color:var(--saffron)}
 .d-meet{display:grid;grid-template-columns:auto 1fr;gap:5vw;align-items:center;padding:100px 5vw}
 .d-meet img{width:260px;height:260px;border-radius:50%;object-fit:cover;outline:10px solid var(--saffron);outline-offset:-2px}
@@ -60,7 +60,7 @@ body{background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;f
 
 <header class="d-top">
   <a class="mark" href="#">Picto<span>logy</span></a>
-  <nav>{% set cols = {pysanky:'#c4362f', cards:'#24479a', felt:'#1d5c4a', wax:'#c99212'} %}
+  <nav>{% set cols = {pysanky:'#c4362f', cards:'#24479a', ostrich:'#1d5c4a', felt:'#1d5c4a', wax:'#c99212'} %}
   {% for c in categories %}<a href="#{{ c.key }}" style="background:{{ cols[c.key] }}">{{ c.label }}</a>{% endfor %}</nav>
 </header>
 

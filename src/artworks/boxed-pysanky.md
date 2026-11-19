@@ -7,6 +7,6 @@ categories:
 caption: "Every egg comes in its own plexiglass box with a sheet explaining its symbols."
 availability: ""
 featured: false
-order: 22
-published: true
+order: 122
+published: false
 ---

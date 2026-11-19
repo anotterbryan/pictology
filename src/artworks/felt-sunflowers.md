@@ -7,6 +7,6 @@ categories:
 caption: "Bright sunflowers with stitched centers, as ornaments or pins."
 availability: "$5 each"
 featured: false
-order: 41
+order: 141
 published: false
 ---

@@ -4,7 +4,14 @@
     "label": "Pysanky eggs",
     "price": "Gift-boxed, with a guide to the symbols",
     "blurb": "Real eggshells, hand drawn in beeswax and dyed color by color. Every design is Carole’s own, and each egg comes in a clear box with her explanation of pysanky.",
-    "image": "/images/art/hero-eggs.jpg"
+    "image": "/images/art/verse-maple-sweet-snow.jpg"
+  },
+  {
+    "key": "ostrich",
+    "label": "Ostrich eggs",
+    "price": "Ask about these showpieces",
+    "blurb": "Giant ostrich eggs, hand drawn in beeswax and dyed just like her hen eggs, with room for even more pattern and color.",
+    "image": "/images/art/ostrich-blue.jpg"
   },
   {
     "key": "cards",

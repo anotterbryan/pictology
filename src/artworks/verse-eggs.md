@@ -7,6 +7,6 @@ categories:
 caption: "Landscapes and hand-lettered lines such as “Peace on Earth,” “Tree of Life” and “Sleeping Billows.”"
 availability: ""
 featured: false
-order: 10
+order: 110
 published: true
 ---

@@ -6,7 +6,7 @@ categories:
   - pysanky
 caption: "Suns, doves, deer and poppies in red, saffron and black."
 availability: ""
-featured: true
-order: 1
+featured: false
+order: 101
 published: true
 ---

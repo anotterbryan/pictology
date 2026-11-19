@@ -7,6 +7,6 @@ categories:
 caption: "Plump red cardinals, hand-stitched with bead eyes."
 availability: "$5 each"
 featured: false
-order: 39
+order: 139
 published: false
 ---
