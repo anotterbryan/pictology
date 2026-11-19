@@ -7,6 +7,6 @@ categories:
 caption: "A rosy desert sunset with a cactus and coyote, lettered with a line of verse."
 availability: ""
 featured: false
-order: 14
+order: 16
 published: true
 ---

@@ -7,6 +7,6 @@ categories:
 caption: "A white dove with an olive branch and a gold star on deep blue."
 availability: ""
 featured: false
-order: 6
+order: 8
 published: true
 ---

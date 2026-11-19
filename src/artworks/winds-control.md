@@ -7,6 +7,6 @@ categories:
 caption: "A seaside scene with a striped umbrella and fish, lettered with a line of verse."
 availability: ""
 featured: false
-order: 13
+order: 15
 published: true
 ---

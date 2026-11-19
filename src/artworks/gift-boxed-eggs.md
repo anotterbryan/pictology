@@ -7,6 +7,6 @@ categories:
 caption: "Ready to give: each egg comes in its own clear box with Carole’s explanation of pysanky and its symbols."
 availability: ""
 featured: false
-order: 16
+order: 18
 published: true
 ---

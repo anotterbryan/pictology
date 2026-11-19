@@ -7,6 +7,6 @@ categories:
 caption: "A winter maple against a blue sky above a red “Maple Sweet” band."
 availability: ""
 featured: false
-order: 8
+order: 10
 published: true
 ---

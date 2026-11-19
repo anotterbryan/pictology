@@ -7,6 +7,6 @@ categories:
 caption: "Rows of tiny stars, crosses and diamonds in red, saffron and black, circling the whole egg."
 availability: "Ask about this egg"
 featured: false
-order: 3
+order: 5
 published: true
 ---

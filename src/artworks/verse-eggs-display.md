@@ -7,6 +7,6 @@ categories:
 caption: "Hand-lettered eggs with landscapes and lines of verse, a favorite of Carole’s."
 availability: ""
 featured: false
-order: 5
+order: 7
 published: true
 ---

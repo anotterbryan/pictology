@@ -7,6 +7,6 @@ categories:
 caption: "Bold diamonds and eight-point stars in fiery red, orange and black."
 availability: "Ask about this egg"
 featured: false
-order: 4
+order: 6
 published: true
 ---

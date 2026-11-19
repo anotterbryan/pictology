@@ -7,6 +7,6 @@ categories:
 caption: "Green Vermont hills and a blue sky, lettered “Summer.”"
 availability: ""
 featured: false
-order: 11
+order: 13
 published: true
 ---

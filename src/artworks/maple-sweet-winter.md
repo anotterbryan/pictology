@@ -7,6 +7,6 @@ categories:
 caption: "A bare maple in the snow, with “Maple Sweet” lettered around the egg."
 availability: ""
 featured: false
-order: 7
+order: 9
 published: true
 ---
