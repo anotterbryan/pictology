@@ -126,8 +126,10 @@ content:
     list: true
     fields:
     - name: icon
-      label: Emoji
-      type: string
+      label: Icon
+      type: select
+      options:
+        values: [hand, leaf, frame, heart]
     - name: title
       label: Heading
       type: string

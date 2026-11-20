@@ -3,39 +3,229 @@
   "intro": "Choose a pack, pick the themes you love, and send Carole your order in a minute. She’ll confirm what’s available, finish anything made to order, and send you a simple invoice. No payment is taken on this site.",
   "promise_title": "What to expect from a handmade piece",
   "promise": [
-    { "icon": "✍️", "title": "Drawn and painted by hand, one at a time", "text": "Every card and egg is made by Carole herself. She could have prints made, but making each piece by hand is where she finds her joy. She sings while she works." },
-    { "icon": "🌿", "title": "No two are exactly alike", "text": "Even when a design repeats, the wax, the dye and the brush make each one a little different. Colors, lettering and landscapes will vary slightly, and that’s the beauty of it." },
-    { "icon": "🖼️", "title": "Photos show the style you’ll receive", "text": "The pictures are examples of each theme. You’ll get a piece in that style, but usually not that exact one. Pieces marked “On hand” are the actual items, ready to go." },
-    { "icon": "💌", "title": "Each one carries its own meaning", "text": "Pysanky are traditionally made with the person who receives them in mind. Every egg comes gift-boxed with Carole’s explanation of the art and its symbols." }
+    {
+      "icon": "hand",
+      "title": "Drawn and painted by hand, one at a time",
+      "text": "Every card and egg is made by Carole herself. She could have prints made, but making each piece by hand is where she finds her joy. She sings while she works."
+    },
+    {
+      "icon": "leaf",
+      "title": "No two are exactly alike",
+      "text": "Even when a design repeats, the wax, the dye and the brush make each one a little different. Colors, lettering and landscapes will vary slightly, and that’s the beauty of it."
+    },
+    {
+      "icon": "frame",
+      "title": "Photos show the style you’ll receive",
+      "text": "The pictures are examples of each theme. You’ll get a piece in that style, but usually not that exact one. Pieces marked “On hand” are the actual items, ready to go."
+    },
+    {
+      "icon": "heart",
+      "title": "Each one carries its own meaning",
+      "text": "Pysanky are traditionally made with the person who receives them in mind. Every egg comes gift-boxed with Carole’s explanation of the art and its symbols."
+    }
   ],
   "how_title": "How ordering works",
   "how": [
-    { "title": "Build your order", "text": "Add singles, mix-and-match packs or bulk packs. Pick themes, or leave it to Carole." },
-    { "title": "Send your order", "text": "Checkout creates a purchase order with a number and emails it straight to Carole." },
-    { "title": "Carole confirms", "text": "She replies to confirm availability, timing, shipping or pickup, and the final total." },
-    { "title": "Pay your way", "text": "She sends payment details (Venmo, PayPal, check or an invoice), then makes and sends your pieces." }
+    {
+      "title": "Build your order",
+      "text": "Add singles, mix-and-match packs or bulk packs. Pick themes, or leave it to Carole."
+    },
+    {
+      "title": "Send your order",
+      "text": "Checkout creates a purchase order with a number and emails it straight to Carole."
+    },
+    {
+      "title": "Carole confirms",
+      "text": "She replies to confirm availability, timing, shipping or pickup, and the final total."
+    },
+    {
+      "title": "Pay your way",
+      "text": "She sends payment details (Venmo, PayPal, check or an invoice), then makes and sends your pieces."
+    }
   ],
   "payment_note": "No card is charged here. Carole confirms every order personally and then sends payment details.",
-  "card_themes": ["Winter landscapes", "Christmas & Santas", "Peace doves", "Sheep & pastoral", "Desert", "Cats & animals", "Mandalas", "Flowers (spring)"],
-  "egg_themes": ["Traditional geometric", "Story & verse (landscapes)", "Birds & animals", "Flowers & sunflowers"],
+  "card_themes": [
+    "Winter landscapes",
+    "Christmas & Santas",
+    "Peace doves",
+    "Sheep & pastoral",
+    "Desert",
+    "Cats & animals",
+    "Mandalas",
+    "Flowers (spring)"
+  ],
+  "egg_themes": [
+    "Traditional geometric",
+    "Story & verse (landscapes)",
+    "Birds & animals",
+    "Flowers & sunflowers"
+  ],
   "sections": [
-    { "key": "cards", "title": "Collaged cards", "blurb": "One-of-a-kind cut-paper and painted cards, blank inside. Mix and match themes in any pack." },
-    { "key": "eggs", "title": "Pysanky eggs", "blurb": "Real hen eggs, hand drawn in beeswax and dyed color by color, each gift-boxed with Carole’s guide to the symbols." },
-    { "key": "bulk", "title": "Bulk & shop packs", "blurb": "For gift-giving, events, churches and shops. Bulk packs guarantee a good mix of themes and the best per-piece price." },
-    { "key": "onhand", "title": "On hand now: one-of-a-kind showpieces", "blurb": "These are the actual pieces pictured, ready to go. Once they’re gone, they’re gone." }
+    {
+      "key": "cards",
+      "title": "Collaged cards",
+      "blurb": "One-of-a-kind cut-paper and painted cards, blank inside. Mix and match themes in any pack."
+    },
+    {
+      "key": "eggs",
+      "title": "Pysanky eggs",
+      "blurb": "Real hen eggs, hand drawn in beeswax and dyed color by color, each gift-boxed with Carole’s guide to the symbols."
+    },
+    {
+      "key": "bulk",
+      "title": "Bulk & shop packs",
+      "blurb": "For gift-giving, events, churches and shops. Bulk packs guarantee a good mix of themes and the best per-piece price."
+    },
+    {
+      "key": "onhand",
+      "title": "On hand now: one-of-a-kind showpieces",
+      "blurb": "These are the actual pieces pictured, ready to go. Once they’re gone, they’re gone."
+    }
   ],
   "products": [
-    { "id": "card-1", "section": "cards", "name": "Single card", "image": "/images/art/card-birch.jpg", "price": 7, "pack_size": 1, "themes": "card", "stock": "", "note": "Pick your theme", "desc": "One hand-made collaged card in the theme of your choice." },
-    { "id": "card-4", "section": "cards", "name": "Mix & match 4-pack", "image": "/images/art/card-sheep-night.jpg", "price": 25, "pack_size": 4, "themes": "card", "stock": "", "note": "Most popular", "desc": "Any 4 cards. Mix themes however you like: a winter, a dove, two Santas…" },
-    { "id": "card-10", "section": "bulk", "name": "Card bundle of 10", "image": "/images/art/card-santa-tree.jpg", "price": 58, "pack_size": 10, "themes": "card", "stock": "", "note": "Holiday sender’s pack", "desc": "Ten one-of-a-kind cards for your whole holiday list, in your choice of themes." },
-    { "id": "card-25", "section": "bulk", "name": "Card bundle of 25", "image": "/images/art/card-dove-red.jpg", "price": 135, "pack_size": 25, "themes": "card", "stock": "", "note": "Churches & events", "desc": "A generous assortment for gifts, fundraisers or thank-yous." },
-    { "id": "card-50", "section": "bulk", "name": "Shop pack: 50 cards", "image": "/images/art/card-mandala-purple.jpg", "price": "", "pack_size": 50, "themes": "card", "stock": "", "note": "Wholesale · price on request", "desc": "For stores and galleries: 50 cards bought outright, a balanced mix across every theme. Carole will send a quote." },
-    { "id": "egg-1", "section": "eggs", "name": "Hand-painted pysanka", "image": "/images/art/verse-peace-on-earth.jpg", "price": 32, "pack_size": 1, "themes": "egg", "stock": "", "note": "Gift-boxed", "desc": "One hen-egg pysanka in the style you choose, in a clear gift box with Carole’s symbol guide." },
-    { "id": "egg-3", "section": "eggs", "name": "Set of 3 pysanky", "image": "/images/art/boxed-eggs.jpg", "price": 90, "pack_size": 3, "themes": "egg", "stock": "", "note": "Mix styles", "desc": "Three individually boxed eggs. Mix styles, or match them as a set." },
-    { "id": "egg-6", "section": "bulk", "name": "Collector’s half dozen", "image": "/images/art/verse-eggs-display.jpg", "price": 175, "pack_size": 6, "themes": "egg", "stock": "", "note": "Gift & collector set", "desc": "Six boxed pysanky in a mix of traditional and story styles." },
-    { "id": "egg-25", "section": "bulk", "name": "Shop pack: 25 eggs", "image": "/images/art/basket-full.jpg", "price": "", "pack_size": 25, "themes": "egg", "stock": "", "note": "Wholesale · price on request", "desc": "For shops and galleries: 25 boxed eggs bought outright, a good selection of designs. Carole will send a quote." },
-    { "id": "ostrich-rosette", "section": "onhand", "name": "Ostrich Egg, Star Rosette", "image": "/images/art/ostrich-blue-studio.jpg", "price": "", "pack_size": 1, "themes": "", "stock": "1", "note": "One of a kind · price on request", "desc": "Turquoise, violet and mint star rosette on a giant ostrich egg." },
-    { "id": "ostrich-vine", "section": "onhand", "name": "Ostrich Egg, Red Bands & Vine", "image": "/images/art/ostrich-red-studio-v2.jpg", "price": "", "pack_size": 1, "themes": "", "stock": "1", "note": "One of a kind · price on request", "desc": "Red, saffron and black bands with a green leafy vine." },
-    { "id": "ostrich-diamonds", "section": "onhand", "name": "Ostrich Egg, Red Diamonds", "image": "/images/art/ostrich-red-diamonds.jpg", "price": "", "pack_size": 1, "themes": "", "stock": "1", "note": "One of a kind · price on request", "desc": "Bold diamonds and eight-point stars in fiery red, orange and black." }
+    {
+      "id": "card-1",
+      "section": "cards",
+      "name": "Single card",
+      "image": "/images/art/card-birch.jpg",
+      "price": 7,
+      "pack_size": 1,
+      "themes": "card",
+      "stock": "",
+      "note": "Pick your theme",
+      "desc": "One hand-made collaged card in the theme of your choice."
+    },
+    {
+      "id": "card-4",
+      "section": "cards",
+      "name": "Mix & match 4-pack",
+      "image": "/images/art/card-sheep-night.jpg",
+      "price": 25,
+      "pack_size": 4,
+      "themes": "card",
+      "stock": "",
+      "note": "Most popular",
+      "desc": "Any 4 cards. Mix themes however you like: a winter, a dove, two Santas…"
+    },
+    {
+      "id": "card-10",
+      "section": "bulk",
+      "name": "Card bundle of 10",
+      "image": "/images/art/card-santa-tree.jpg",
+      "price": 58,
+      "pack_size": 10,
+      "themes": "card",
+      "stock": "",
+      "note": "Holiday sender’s pack",
+      "desc": "Ten one-of-a-kind cards for your whole holiday list, in your choice of themes."
+    },
+    {
+      "id": "card-25",
+      "section": "bulk",
+      "name": "Card bundle of 25",
+      "image": "/images/art/card-dove-red.jpg",
+      "price": 135,
+      "pack_size": 25,
+      "themes": "card",
+      "stock": "",
+      "note": "Churches & events",
+      "desc": "A generous assortment for gifts, fundraisers or thank-yous."
+    },
+    {
+      "id": "card-50",
+      "section": "bulk",
+      "name": "Shop pack: 50 cards",
+      "image": "/images/art/card-mandala-purple.jpg",
+      "price": "",
+      "pack_size": 50,
+      "themes": "card",
+      "stock": "",
+      "note": "Wholesale · price on request",
+      "desc": "For stores and galleries: 50 cards bought outright, a balanced mix across every theme. Carole will send a quote."
+    },
+    {
+      "id": "egg-1",
+      "section": "eggs",
+      "name": "Hand-painted pysanka",
+      "image": "/images/art/verse-peace-on-earth.jpg",
+      "price": 32,
+      "pack_size": 1,
+      "themes": "egg",
+      "stock": "",
+      "note": "Gift-boxed",
+      "desc": "One hen-egg pysanka in the style you choose, in a clear gift box with Carole’s symbol guide."
+    },
+    {
+      "id": "egg-3",
+      "section": "eggs",
+      "name": "Set of 3 pysanky",
+      "image": "/images/art/boxed-eggs.jpg",
+      "price": 90,
+      "pack_size": 3,
+      "themes": "egg",
+      "stock": "",
+      "note": "Mix styles",
+      "desc": "Three individually boxed eggs. Mix styles, or match them as a set."
+    },
+    {
+      "id": "egg-6",
+      "section": "bulk",
+      "name": "Collector’s half dozen",
+      "image": "/images/art/verse-eggs-display.jpg",
+      "price": 175,
+      "pack_size": 6,
+      "themes": "egg",
+      "stock": "",
+      "note": "Gift & collector set",
+      "desc": "Six boxed pysanky in a mix of traditional and story styles."
+    },
+    {
+      "id": "egg-25",
+      "section": "bulk",
+      "name": "Shop pack: 25 eggs",
+      "image": "/images/art/basket-full.jpg",
+      "price": "",
+      "pack_size": 25,
+      "themes": "egg",
+      "stock": "",
+      "note": "Wholesale · price on request",
+      "desc": "For shops and galleries: 25 boxed eggs bought outright, a good selection of designs. Carole will send a quote."
+    },
+    {
+      "id": "ostrich-rosette",
+      "section": "onhand",
+      "name": "Ostrich Egg, Star Rosette",
+      "image": "/images/art/ostrich-blue-studio.jpg",
+      "price": "",
+      "pack_size": 1,
+      "themes": "",
+      "stock": "1",
+      "note": "One of a kind · price on request",
+      "desc": "Turquoise, violet and mint star rosette on a giant ostrich egg."
+    },
+    {
+      "id": "ostrich-vine",
+      "section": "onhand",
+      "name": "Ostrich Egg, Red Bands & Vine",
+      "image": "/images/art/ostrich-red-studio-v2.jpg",
+      "price": "",
+      "pack_size": 1,
+      "themes": "",
+      "stock": "1",
+      "note": "One of a kind · price on request",
+      "desc": "Red, saffron and black bands with a green leafy vine."
+    },
+    {
+      "id": "ostrich-diamonds",
+      "section": "onhand",
+      "name": "Ostrich Egg, Red Diamonds",
+      "image": "/images/art/ostrich-red-diamonds.jpg",
+      "price": "",
+      "pack_size": 1,
+      "themes": "",
+      "stock": "1",
+      "note": "One of a kind · price on request",
+      "desc": "Bold diamonds and eight-point stars in fiery red, orange and black."
+    }
   ]
 }

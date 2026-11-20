@@ -19,7 +19,7 @@ permalink: /shop/
   <div class="wrap">
     <h2>{{ shop.promise_title }}</h2>
     <div class="promise-grid">
-      {% for p in shop.promise %}<div class="pr"><div class="pr-i" aria-hidden="true">{{ p.icon }}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}
+      {% for p in shop.promise %}<div class="pr"><div class="pr-i">{% set icon = p.icon %}{% include "partials/icon.njk" %}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}
     </div>
   </div>
 </section>

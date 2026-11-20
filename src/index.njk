@@ -16,8 +16,6 @@ layout: layouts/base.njk
     {% if hero %}
     <div class="hero-img">
       <img src="{{ hero.data.image }}" alt="{{ hero.data.image_alt }}" fetchpriority="high">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="tag">Newest: <b>{{ hero.data.title }}</b></div>
     </div>
     {% endif %}
   </div>
@@ -36,22 +34,6 @@ layout: layouts/base.njk
   </div>
 </section>
 
-{% if site.promo_title %}
-<section class="promo">
-  <div class="wrap">
-    <div class="promo-card">
-      {% if site.promo_image %}<img src="{{ site.promo_image }}" alt="{{ site.promo_title }}">{% endif %}
-      <div>
-        <div class="eyebrow">{{ site.promo_eyebrow }}</div>
-        <h2>{{ site.promo_title }}</h2>
-        <p>{{ site.promo_text }}</p>
-        <a class="btn fill" href="#gallery" data-go="cards">See the cards</a>
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
-
 <section id="work">
   <div class="wrap">
     <div class="head">
@@ -61,7 +43,7 @@ layout: layouts/base.njk
     </div>
     <div class="cats">
       {% for c in categories %}
-      <a class="cat" data-go="{{ c.key }}"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><span class="price">{{ c.price }}</span><p>{{ c.blurb }}</p></div></a>
+      <a class="cat" href="/shop/"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><span class="price">{{ c.price }}</span><p>{{ c.blurb }}</p></div></a>
       {% endfor %}
     </div>
   </div>
@@ -70,7 +52,7 @@ layout: layouts/base.njk
 <section class="expect" id="expect">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Handmade, one at a time</div><h2>{{ shop.promise_title }}</h2></div>
-    <div class="grid2">{% for p in shop.promise %}<div class="pr"><div class="pr-i" aria-hidden="true">{{ p.icon }}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}</div>
+    <div class="grid2">{% for p in shop.promise %}<div class="pr"><div class="pr-i">{% set icon = p.icon %}{% include "partials/icon.njk" %}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}</div>
     <div class="cta"><a class="btn fill" href="/shop/">Order cards &amp; eggs</a></div>
   </div>
 </section>
@@ -80,7 +62,7 @@ layout: layouts/base.njk
     <div class="head">
       <div class="eyebrow">Gallery</div>
       <h2>From the studio</h2>
-      <p>Tap any piece to see it larger.</p>
+      <p>A selection of Carole’s work. Every piece is one of a kind. Tap any piece to see it larger.</p>
     </div>
     <div class="filters">
       <button class="on" data-f="all">All</button>
@@ -88,7 +70,7 @@ layout: layouts/base.njk
     </div>
     <div class="grid" id="grid">
       {% for a in collections.artworks %}
-      <figure data-c="{{ a.data.categories | join(' ') }}"{% if a.data.image2 %} data-alt="{{ a.data.image2 }}" class="has-alt"{% endif %}><div class="ph"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy">{% if a.data.image2 %}<img class="alt" src="{{ a.data.image2 }}" alt="Another view of {{ a.data.title }}" loading="lazy"><span class="flip">↻ Other side</span>{% endif %}</div><figcaption><b>{{ a.data.title }}</b>{{ a.data.caption }}{% if a.data.availability %}<span class="avail">{{ a.data.availability }}</span>{% endif %}</figcaption></figure>
+      <figure data-c="{{ a.data.categories | join(' ') }}"{% if a.data.image2 %} data-alt="{{ a.data.image2 }}" class="has-alt"{% endif %}><div class="ph"><img src="{{ a.data.image }}" alt="{{ a.data.image_alt }}" loading="lazy">{% if a.data.image2 %}<img class="alt" src="{{ a.data.image2 }}" alt="Another view of {{ a.data.title }}" loading="lazy"><span class="flip">2 views</span>{% endif %}</div><figcaption><b>{{ a.data.title }}</b><span class="desc">{{ a.data.caption }}</span>{% if a.data.availability %}<span class="avail">{{ a.data.availability }}</span>{% endif %}</figcaption></figure>
       {% endfor %}
     </div>
   </div>

@@ -1,12 +1,17 @@
 
 const btns=[...document.querySelectorAll('.filters button')];
 const figs=[...document.querySelectorAll('#grid figure')];
+let expanded=false; const LIMIT=12; const moreBtn=document.getElementById('moreBtn');
 function filter(f){
   btns.forEach(b=>b.classList.toggle('on',b.dataset.f===f));
-  figs.forEach(x=>x.classList.toggle('hide',f!=='all'&&!x.dataset.c.split(' ').includes(f)));
+  let shown=0;
+  figs.forEach(x=>{const match=f==='all'||x.dataset.c.split(' ').includes(f); const over=match&&!expanded&&shown>=LIMIT; x.classList.toggle('hide',!match||over); if(match)shown++;});
+  if(moreBtn) moreBtn.hidden=expanded||shown<=LIMIT;
 }
+if(moreBtn) moreBtn.onclick=()=>{expanded=true;const on=btns.find(b=>b.classList.contains('on'));filter(on?on.dataset.f:'all');};
+filter('all');
 btns.forEach(b=>b.onclick=()=>filter(b.dataset.f));
-document.querySelectorAll('.cat,[data-go]').forEach(c=>c.onclick=()=>{filter(c.dataset.go);document.getElementById('gallery').scrollIntoView({behavior:'smooth'});});
+document.querySelectorAll('[data-go]').forEach(c=>c.onclick=()=>{filter(c.dataset.go);document.getElementById('gallery').scrollIntoView({behavior:'smooth'});});
 const lb=document.getElementById('lb');
 figs.forEach(f=>f.onclick=()=>{
   const main=f.querySelector('img').src, alt=f.dataset.alt ? f.querySelector('img.alt').src : null;
