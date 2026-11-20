@@ -9,8 +9,8 @@ layout: layouts/base.njk
       <h1>{{ site.hero_title | replace("*", "<em>", 1) | replace("*", "</em>", 1) | safe }}</h1>
       <p>{{ site.hero_text }}</p>
       <div class="btns">
-        <a class="btn fill" href="#gallery">See the gallery</a>
-        <a class="btn ghost" href="#contact">Ask about a piece</a>
+        <a class="btn fill" href="/shop/">Order cards &amp; eggs</a>
+        <a class="btn ghost" href="#gallery">See the gallery</a>
       </div>
     </div>
     {% if hero %}
@@ -64,6 +64,14 @@ layout: layouts/base.njk
       <a class="cat" data-go="{{ c.key }}"><img src="{{ c.image }}" alt="{{ c.label }}"><div><h3>{{ c.label }}</h3><span class="price">{{ c.price }}</span><p>{{ c.blurb }}</p></div></a>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<section class="expect" id="expect">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Handmade, one at a time</div><h2>{{ shop.promise_title }}</h2></div>
+    <div class="grid2">{% for p in shop.promise %}<div class="pr"><div class="pr-i" aria-hidden="true">{{ p.icon }}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}</div>
+    <div class="cta"><a class="btn fill" href="/shop/">Order cards &amp; eggs</a></div>
   </div>
 </section>
 

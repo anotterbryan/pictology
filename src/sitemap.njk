@@ -9,6 +9,7 @@ eleventyExcludeFromCollections: true
   <image:image><image:loc>{{ site.url }}{{ a.data.image }}</image:loc></image:image>
 {%- endfor %}
 </url>
+<url><loc>{{ site.url }}/shop/</loc><lastmod>{{ "" | buildDate }}</lastmod></url>
 <url><loc>{{ site.url }}/about/</loc><lastmod>{{ "" | buildDate }}</lastmod></url>
 {%- for n in collections.notes %}
 <url><loc>{{ site.url }}{{ n.url }}</loc><lastmod>{{ n.date | isoDate }}</lastmod></url>

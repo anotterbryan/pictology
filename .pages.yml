@@ -42,7 +42,99 @@ content:
     label: Photo description (for screen readers)
     type: string
     description: e.g. "Red pysanka ornament with white spirals"
-  - name: site
+  - name: shop
+  label: Shop & inventory
+  type: file
+  path: src/_data/shop.json
+  format: json
+  fields:
+  - name: title
+    label: Shop page title
+    type: string
+  - name: intro
+    label: Shop intro
+    type: text
+  - name: payment_note
+    label: Payment note
+    type: text
+  - name: card_themes
+    label: Card themes customers can pick
+    type: string
+    list: true
+  - name: egg_themes
+    label: Egg styles customers can pick
+    type: string
+    list: true
+  - name: products
+    label: Products & inventory
+    type: object
+    list: true
+    fields:
+    - name: id
+      label: Code (unique, no spaces, e.g. card-4)
+      type: string
+    - name: section
+      label: Shop section
+      type: select
+      options:
+        values:
+        - name: cards
+          label: Collaged cards
+        - name: eggs
+          label: Pysanky eggs
+        - name: bulk
+          label: Bulk & shop packs
+        - name: onhand
+          label: On hand now (one of a kind)
+    - name: name
+      label: Name
+      type: string
+    - name: image
+      label: Photo
+      type: image
+      options:
+        path: src/images/art
+    - name: price
+      label: Price in dollars (leave blank for "Price on request")
+      type: string
+    - name: pack_size
+      label: Pieces per pack (1 for singles)
+      type: number
+    - name: themes
+      label: Let customers pick themes?
+      type: select
+      options:
+        values:
+        - name: card
+          label: Yes, card themes
+        - name: egg
+          label: Yes, egg styles
+        - name: ""
+          label: No (a specific piece)
+    - name: stock
+      label: On hand (how many ready now; leave blank for "Made to order")
+      type: string
+    - name: note
+      label: Small label (e.g. "Most popular")
+      type: string
+    - name: desc
+      label: Description
+      type: text
+  - name: promise
+    label: What to expect (the four promise cards)
+    type: object
+    list: true
+    fields:
+    - name: icon
+      label: Emoji
+      type: string
+    - name: title
+      label: Heading
+      type: string
+    - name: text
+      label: Text
+      type: text
+- name: site
   label: Site settings
   type: file
   path: src/_data/site.json

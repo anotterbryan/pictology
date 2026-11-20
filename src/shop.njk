@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+title: Order Cards & Eggs
+summary: Order hand-painted pysanky eggs and one-of-a-kind collaged cards from Carole Crompton in Brattleboro, Vermont. Singles, mix-and-match packs and bulk shop packs.
+permalink: /shop/
+---
+<section class="shop-hero">
+  <div class="wrap">
+    <div class="eyebrow">Shop</div>
+    <h1>{{ shop.title }}</h1>
+    <p>{{ shop.intro }}</p>
+    <div class="shop-jump">
+      {% for s in shop.sections %}<a href="#sec-{{ s.key }}">{{ s.title }}</a>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="wrap">
+    <h2>{{ shop.promise_title }}</h2>
+    <div class="promise-grid">
+      {% for p in shop.promise %}<div class="pr"><div class="pr-i" aria-hidden="true">{{ p.icon }}</div><h3>{{ p.title }}</h3><p>{{ p.text }}</p></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="shop-layout wrap">
+  <div class="shop-main">
+    {% for s in shop.sections %}
+    <section class="shop-sec" id="sec-{{ s.key }}">
+      <h2>{{ s.title }}</h2>
+      <p class="sec-blurb">{{ s.blurb }}</p>
+      <div class="prod-grid">
+        {% for p in shop.products %}{% if p.section == s.key %}
+        <article class="prod" data-id="{{ p.id }}" data-name="{{ p.name }}" data-price="{{ p.price }}" data-pack="{{ p.pack_size }}" data-themes="{{ p.themes }}" data-stock="{{ p.stock }}">
+          <div class="prod-img"><img src="{{ p.image }}" alt="{{ p.name }}" loading="lazy">
+            {% if p.stock %}<span class="badge on">On hand · {{ p.stock }} available</span>{% else %}<span class="badge mto">Made to order</span>{% endif %}
+          </div>
+          <div class="prod-b">
+            {% if p.note %}<div class="prod-note">{{ p.note }}</div>{% endif %}
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.desc }}</p>
+            <div class="prod-row">
+              <span class="prod-price">{% if p.price %}${{ p.price }}{% if p.pack_size > 1 %}<small> · ${{ (p.price / p.pack_size) | round(2) }} each</small>{% endif %}{% else %}Price on request{% endif %}</span>
+              <button class="add" type="button">{% if p.themes %}Choose &amp; add{% elif p.price %}Add to order{% else %}Request this piece{% endif %}</button>
+            </div>
+          </div>
+        </article>
+        {% endif %}{% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+
+    <section class="how" id="how">
+      <h2>{{ shop.how_title }}</h2>
+      <ol class="how-steps">{% for h in shop.how %}<li><b>{{ h.title }}</b><span>{{ h.text }}</span></li>{% endfor %}</ol>
+      <p class="pay-note">🔒 {{ shop.payment_note }}</p>
+    </section>
+  </div>
+
+  <aside class="cart" id="cart" aria-label="Your order">
+    <h2>Your order <span class="cart-count" id="cartCount">0</span></h2>
+    <div id="cartItems" class="cart-items"><p class="empty">Nothing here yet. Add a card pack or an egg to get started.</p></div>
+    <div class="cart-sum">
+      <div><span>Subtotal</span><b id="cartSubtotal">$0.00</b></div>
+      <div class="quote-line" id="quoteLine" hidden><span>Plus items priced on request</span><b>Quote</b></div>
+      <small>Shipping or pickup is arranged with Carole. No payment is taken now.</small>
+    </div>
+    <button class="btn fill checkout-btn" id="toCheckout" type="button" disabled>Checkout</button>
+  </aside>
+</div>
+
+<button class="cart-fab" id="cartFab" type="button" aria-label="View your order">🛒 <span id="fabCount">0</span> · <span id="fabTotal">$0</span></button>
+
+<!-- theme chooser -->
+<div class="modal" id="chooser" role="dialog" aria-modal="true" aria-labelledby="chTitle" hidden>
+  <div class="sheet">
+    <button class="x" data-close aria-label="Close">×</button>
+    <h3 id="chTitle"></h3>
+    <p class="ch-sub" id="chSub"></p>
+    <div class="ch-qty"><span>How many?</span><div class="qtys"><button type="button" data-q="-1">−</button><b id="chQty">1</b><button type="button" data-q="1">+</button></div></div>
+    <div class="ch-themes" id="chThemes"></div>
+    <p class="ch-left" id="chLeft"></p>
+    <label class="ch-note">Anything special? <span>(optional: colors, names, an occasion)</span><textarea id="chNote" rows="2"></textarea></label>
+    <button class="btn fill" id="chAdd" type="button">Add to order</button>
+  </div>
+</div>
+
+<!-- checkout -->
+<div class="checkout" id="checkout" hidden>
+  <div class="co-wrap">
+    <form class="co-form" id="coForm" novalidate>
+      <button class="co-back" type="button" data-close-co>← Back to shop</button>
+      <div class="co-brand">Picto<span>logy</span></div>
+      <h2>Contact</h2>
+      <div class="f2"><label>Full name<input name="name" required autocomplete="name"></label><label>Phone (optional)<input name="phone" autocomplete="tel"></label></div>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <h2>Delivery</h2>
+      <div class="radios">
+        <label class="radio"><input type="radio" name="delivery" value="Ship to me" checked><span><b>Ship to me</b><small>Carole will confirm shipping cost. Eggs ship boxed and padded.</small></span></label>
+        <label class="radio"><input type="radio" name="delivery" value="Local pickup (Brattleboro, VT)"><span><b>Local pickup</b><small>Brattleboro, Vermont. Carole will arrange a time.</small></span></label>
+      </div>
+      <div id="addr">
+        <label>Street address<input name="address1" autocomplete="address-line1"></label>
+        <div class="f3"><label>City<input name="city" autocomplete="address-level2"></label><label>State<input name="state" autocomplete="address-level1"></label><label>ZIP<input name="zip" autocomplete="postal-code"></label></div>
+      </div>
+      <h2>Order details</h2>
+      <label>Organization or shop (for bulk orders)<input name="org" placeholder="Optional"></label>
+      <label>Need it by?<input name="needby" type="date"></label>
+      <label>Gift message or notes<textarea name="notes" rows="3" placeholder="Optional"></textarea></label>
+      <h2>Payment preference</h2>
+      <p class="muted">Nothing is charged now. Carole sends payment details after she confirms your order.</p>
+      <div class="radios inline">
+        {% for m in ["Venmo","PayPal","Check","Invoice by email"] %}<label class="radio sm"><input type="radio" name="pay" value="{{ m }}" {% if loop.first %}checked{% endif %}><span><b>{{ m }}</b></span></label>{% endfor %}
+      </div>
+      <label class="agree"><input type="checkbox" name="agree" required> <span>I understand every piece is handmade and one of a kind, so mine may differ slightly from the photos.</span></label>
+      <p class="co-err" id="coErr" hidden></p>
+      <button class="btn fill co-submit" type="submit">Create purchase order</button>
+    </form>
+    <aside class="co-summary">
+      <h2>Order summary</h2>
+      <div id="coItems"></div>
+      <div class="co-tot"><div><span>Subtotal</span><b id="coSub"></b></div><div><span>Shipping</span><b>Confirmed by Carole</b></div><div class="grand"><span>Estimated total</span><b id="coTotal"></b></div></div>
+      <p class="muted small">Items priced on request will be quoted by Carole.</p>
+    </aside>
+  </div>
+</div>
+
+<!-- purchase order -->
+<div class="po-screen" id="poScreen" hidden>
+  <div class="po-actions no-print">
+    <div class="po-done">✓ Your purchase order is ready</div>
+    <p>One last step: send it to Carole. Tap <b>Email to Carole</b> and your email app opens with everything filled in. Just press send.</p>
+    <div class="po-btns">
+      <a class="btn fill" id="poEmail" href="#">✉️ Email to Carole</a>
+      <button class="btn ghost" id="poCopy" type="button">Copy order</button>
+      <button class="btn ghost" id="poPrint" type="button">Print / Save PDF</button>
+      <button class="btn ghost" id="poNew" type="button">Back to shop</button>
+    </div>
+    <p class="muted small" id="poFallback">No email app? Send the copied order to <b>{{ site.email }}</b>.</p>
+  </div>
+  <div class="po" id="po"></div>
+</div>
+
+<script>window.PICTOLOGY_SHOP={email:{{ site.email | json | safe }},cardThemes:{{ shop.card_themes | json | safe }},eggThemes:{{ shop.egg_themes | json | safe }},artist:{{ site.full_name | json | safe }},site:{{ site.url | json | safe }}};</script>
+<script src="/js/shop.js?v=1" defer></script>
